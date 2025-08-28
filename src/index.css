@@ -1,42 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Pyra Design System - Dark-First Fintech Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    /* Pyra Brand Colors (HSL) */
+    --bg: 215 100% 9%;           /* #0B1020 - midnight navy */
+    --navy-700: 210 80% 12%;     /* #0D1B2A - deeper navy */
+    --indigo: 239 84% 60%;       /* #4F46E5 - brand indigo */
+    --cyan: 195 92% 55%;         /* #22D3EE - brand cyan */
+    --teal: 178 86% 36%;         /* #0EA5A4 - supporting teal */
+    --ink: 210 30% 87%;          /* #E2E8F0 - primary text */
+    --muted: 212 22% 67%;        /* #94A3B8 - muted text */
+    
+    /* Base System (Dark-First) */
+    --background: var(--bg);
+    --foreground: var(--ink);
+    
+    --card: 215 25% 8%;
+    --card-foreground: var(--ink);
+    
+    --popover: var(--navy-700);
+    --popover-foreground: var(--ink);
+    
+    --primary: var(--indigo);
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: var(--navy-700);
+    --secondary-foreground: var(--ink);
+    
+    --muted: var(--navy-700);
+    --muted-foreground: var(--muted);
+    
+    --accent: var(--cyan);
+    --accent-foreground: var(--bg);
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 215 25% 15%;
+    --input: 215 25% 15%;
+    --ring: var(--indigo);
+    
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -55,43 +65,32 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+}
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+/* Pyra Keyframe Animations */
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+@keyframes floatParticle {
+  0%, 100% { transform: translateY(0) opacity(0.4); }
+  50% { transform: translateY(-10px) opacity(0.8); }
+}
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+@keyframes rise {
+  0% { transform: translateY(12px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+@keyframes sheen {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 @layer base {
@@ -100,6 +99,90 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-['Inter'];
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-['Plus_Jakarta_Sans'];
+  }
+
+  /* Reveal Animation Trigger */
+  [data-inview="true"] {
+    animation: rise 0.6s ease-out forwards;
+  }
+
+  [data-inview="false"] {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@layer components {
+  /* Gradient Utilities */
+  .bg-gradient-deep {
+    background: linear-gradient(135deg, hsl(var(--bg)), hsl(var(--navy-700)));
+  }
+
+  .bg-accent-gradient {
+    background: linear-gradient(135deg, hsl(var(--indigo)), hsl(var(--cyan)));
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease-in-out infinite;
+  }
+
+  .bg-glass {
+    @apply backdrop-blur-sm bg-white/5 border border-white/10;
+  }
+
+  /* Button Sheen Effect */
+  .btn-sheen {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-sheen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .btn-sheen:hover::before {
+    left: 100%;
+  }
+
+  /* Text Gradients */
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--indigo)), hsl(var(--cyan)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Triangle Particles */
+  .triangle-particle {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 8px solid hsl(var(--cyan) / 0.3);
+    animation: floatParticle 6s ease-in-out infinite;
+  }
+
+  /* Triangle Clip Path */
+  .clip-triangle {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
