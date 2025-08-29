@@ -117,31 +117,129 @@ export function Home() {
     <div>
       <Hero onOpenWaitlist={onOpenWaitlist} />
 
+      {/* Founder Quote Section */}
+      <motion.section
+        className="py-16"
+        style={{ backgroundColor: '#0A0A0A' }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-25% 0px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="max-w-4xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-15% 0px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <motion.div
+              className="bg-premium-glass rounded-2xl p-8 md:p-12 border border-white/10 shimmer-border"
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-10% 0px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <motion.blockquote
+                className="text-xl md:text-2xl text-white mb-6 leading-relaxed text-center"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-5% 0px" }}
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: {
+                    opacity: 1,
+                    transition: {
+                      staggerChildren: 0.2,
+                      delayChildren: 0.2
+                    }
+                  }
+                }}
+              >
+                {[
+                  "Financial responsibility should feel aspirational.",
+                  "Pyra turns disciplined habits into real advantages—",
+                  "clear guidance today, premium access tomorrow."
+                ].map((line, index) => (
+                  <motion.div
+                    key={index}
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0 }
+                    }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="mb-2"
+                  >
+                    {line}
+                  </motion.div>
+                ))}
+              </motion.blockquote>
+              <motion.div
+                className="text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-5% 0px" }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
+              >
+                <div className="text-lg text-white/80 font-medium">— Sanjeev, Co-Founder & CEO</div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </motion.section>
+
       {/* Mission & Introduction Section */}
       <motion.section
         className="py-16"
-        style={{ backgroundColor: '#141414' }}
-        variants={sectionVariants}
+        style={{ backgroundColor: '#111315' }}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-25% 0px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             className="max-w-4xl mx-auto"
-            variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-15% 0px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <motion.p
+            <motion.div
               className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto leading-relaxed"
-              variants={itemVariants}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-10% 0px" }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.15,
+                    delayChildren: 0.1
+                  }
+                }
+              }}
             >
-              Transform your credit behavior into a valuable asset. Build an ecosystem where financial discipline is rewarded,
-              trust is monetized, and you ascend aspirational tiers of finance and lifestyle.
-            </motion.p>
+              {[
+                "Transform your credit behavior into a valuable asset.",
+                "Build an ecosystem where financial discipline is rewarded,",
+                "trust is monetized, and you ascend aspirational tiers of finance and lifestyle."
+              ].map((line, index) => (
+                <motion.p
+                  key={index}
+                  variants={{
+                    hidden: { opacity: 0, y: 15 },
+                    visible: { opacity: 1, y: 0 }
+                  }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  className="mb-2"
+                >
+                  {line}
+                </motion.p>
+              ))}
+            </motion.div>
 
             <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
@@ -247,7 +345,7 @@ export function Home() {
           >
             {/* Prime Club */}
             <motion.div
-              className="bg-premium-glass rounded-2xl p-8 border-premium"
+              className="bg-premium-glass rounded-2xl p-8 border-premium shimmer-border"
               variants={cardVariants}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
@@ -265,7 +363,7 @@ export function Home() {
 
             {/* Spark Club */}
             <motion.div
-              className="bg-premium-glass rounded-2xl p-8 border-premium"
+              className="bg-premium-glass rounded-2xl p-8 border-premium shimmer-border"
               variants={cardVariants}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
@@ -283,7 +381,7 @@ export function Home() {
 
             {/* Nova Club */}
             <motion.div
-              className="bg-premium-glass rounded-2xl p-8 border-premium"
+              className="bg-premium-glass rounded-2xl p-8 border-premium shimmer-border"
               variants={cardVariants}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
@@ -368,104 +466,155 @@ export function Home() {
             viewport={{ once: true }}
           >
             <motion.h2
-              className="font-heading text-4xl font-bold text-white mb-8"
-              variants={itemVariants}
+              className="font-heading text-4xl font-bold text-white mb-8 text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              The Pyra Super-App Vision
+              From Bill Pay to Super-App
             </motion.h2>
 
             <motion.p
-              className="text-lg text-white/80 mb-12 leading-relaxed max-w-3xl mx-auto"
-              variants={itemVariants}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-lg text-white/80 mb-16 leading-relaxed max-w-3xl mx-auto text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             >
-              From Credit → Savings → Investments → Lifestyle, Pyra monetizes trust and rewards responsibility.
-              Your financial discipline becomes your most valuable asset, unlocking a world of possibilities.
+              We start with the habit that matters—repayment. As members prove discipline, we unlock products that match their behavior: subscription financing, savings, earned wage access, insurance, premium lines via partners, and a curated marketplace. Step by step, Pyra becomes your trusted financial hub for SEA.
             </motion.p>
 
-            {/* Vision Architecture */}
+            {/* Sticky Scrolling Vision Tiers */}
+            <div className="relative">
+              {/* Credit Tier - Foundation */}
+              <motion.div
+                className="sticky top-32 mb-32"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-20% 0px" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
+                <div className="bg-premium-glass rounded-2xl p-8 md:p-12 border border-white/10 shimmer-border max-w-2xl">
+                  <div className="flex items-center gap-6 mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full flex items-center justify-center">
+                      <Target className="text-white" size={32} />
+                    </div>
+                    <div>
+                      <h3 className="font-heading text-2xl font-bold text-white mb-2">Credit Foundation</h3>
+                      <p className="text-cyan-400 font-medium">Building trust through discipline</p>
+                    </div>
+                  </div>
+                  <p className="text-white/80 leading-relaxed">
+                    Start your journey with unified bill pay, late-fee protection, and hidden charge detection. Build your Discipline Index (DI) score through consistent repayment behavior.
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Savings Tier - Growth */}
+              <motion.div
+                className="sticky top-32 mb-32"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-20% 0px" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
+                <div className="bg-premium-glass rounded-2xl p-8 md:p-12 border border-white/10 shimmer-border max-w-2xl ml-auto">
+                  <div className="flex items-center gap-6 mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-full flex items-center justify-center">
+                      <Wallet className="text-white" size={32} />
+                    </div>
+                    <div>
+                      <h3 className="font-heading text-2xl font-bold text-white mb-2">Savings & Growth</h3>
+                      <p className="text-cyan-400 font-medium">Smart saving & financial goals</p>
+                    </div>
+                  </div>
+                  <p className="text-white/80 leading-relaxed">
+                    Unlock savings tools, subscription financing, and insurance access. Your proven discipline opens doors to wealth-building opportunities and partner offers.
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Investments Tier - Wealth */}
+              <motion.div
+                className="sticky top-32 mb-32"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-20% 0px" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
+                <div className="bg-premium-glass rounded-2xl p-8 md:p-12 border border-white/10 shimmer-border max-w-2xl">
+                  <div className="flex items-center gap-6 mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-teal-400 to-green-400 rounded-full flex items-center justify-center">
+                      <BarChart3 className="text-white" size={32} />
+                    </div>
+                    <div>
+                      <h3 className="font-heading text-2xl font-bold text-white mb-2">Investments & Wealth</h3>
+                      <p className="text-teal-400 font-medium">Portfolio management & wealth building</p>
+                    </div>
+                  </div>
+                  <p className="text-white/80 leading-relaxed">
+                    Access earned wage solutions, EMI on card bills, and curated partner marketplace. Your financial maturity unlocks sophisticated wealth management tools.
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Lifestyle Tier - Apex */}
+              <motion.div
+                className="sticky top-32 mb-16"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-20% 0px" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
+                <div className="bg-premium-glass rounded-2xl p-8 md:p-12 border border-white/10 shimmer-border max-w-2xl ml-auto">
+                  <div className="flex items-center gap-6 mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full flex items-center justify-center">
+                      <Crown className="text-white" size={32} />
+                    </div>
+                    <div>
+                      <h3 className="font-heading text-2xl font-bold text-white mb-2">Lifestyle & Premium</h3>
+                      <p className="text-yellow-400 font-medium">Exclusive access & premium experiences</p>
+                    </div>
+                  </div>
+                  <p className="text-white/80 leading-relaxed">
+                    Premium credit lines via partners, wealth products, and lifestyle benefits. Your journey culminates in exclusive access to the highest-end financial and lifestyle products.
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Timeline Callout */}
             <motion.div
-              className="relative mb-16"
-              variants={containerVariants}
+              className="mt-16 text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
             >
-              <div className="flex flex-col items-center space-y-6">
-                {/* Lifestyle Tier - Top */}
-                <motion.div
-                  className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 w-80 text-center border border-white/20"
-                  variants={itemVariants}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                >
-                  <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Crown className="text-black" size={24} />
+              <div className="bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 max-w-4xl mx-auto">
+                <h4 className="font-heading text-xl font-bold text-white mb-4">Development Timeline</h4>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-white/80">
+                  <div>
+                    <span className="text-cyan-400 font-medium">Near-term:</span> subscription financing, savings wallet, insurance access
                   </div>
-                  <h3 className="font-heading text-xl font-bold text-white mb-2">Lifestyle</h3>
-                  <p className="text-white/70 text-sm">Premium experiences & exclusive access</p>
-                </motion.div>
-
-                {/* Connection Line */}
-                <motion.div
-                  className="w-px h-8 bg-gradient-to-b from-transparent via-white/30 to-transparent"
-                  variants={itemVariants}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                ></motion.div>
-
-                {/* Investments Tier */}
-                <motion.div
-                  className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 w-96 text-center border border-white/20"
-                  variants={itemVariants}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                >
-                  <div className="w-12 h-12 bg-teal-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <BarChart3 className="text-white" size={24} />
+                  <div>
+                    <span className="text-teal-400 font-medium">Next:</span> Earned wage access, EMI on card bills, curated partner marketplace
                   </div>
-                  <h3 className="font-heading text-xl font-bold text-white mb-2">Investments</h3>
-                  <p className="text-white/70 text-sm">Wealth building & portfolio management</p>
-                </motion.div>
-
-                {/* Connection Line */}
-                <motion.div
-                  className="w-px h-8 bg-gradient-to-b from-transparent via-white/30 to-transparent"
-                  variants={itemVariants}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                ></motion.div>
-
-                {/* Savings Tier */}
-                <motion.div
-                  className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 w-[28rem] text-center border border-white/20"
-                  variants={itemVariants}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                >
-                  <div className="w-12 h-12 bg-cyan-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Wallet className="text-white" size={24} />
+                  <div>
+                    <span className="text-yellow-400 font-medium">Later:</span> Premium credit lines via partners, wealth products, lifestyle benefits
                   </div>
-                  <h3 className="font-heading text-xl font-bold text-white mb-2">Savings</h3>
-                  <p className="text-white/70 text-sm">Smart saving & financial goals</p>
-                </motion.div>
-
-                {/* Connection Line */}
-                <motion.div
-                  className="w-px h-8 bg-gradient-to-b from-transparent via-white/30 to-transparent"
-                  variants={itemVariants}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                ></motion.div>
-
-                {/* Credit Foundation - Base */}
-                <motion.div
-                  className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 w-full max-w-lg text-center border border-white/20"
-                  variants={itemVariants}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                >
-                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Target className="text-white" size={24} />
-                  </div>
-                  <h3 className="font-heading text-xl font-bold text-white mb-2">Credit</h3>
-                  <p className="text-white/70 text-sm">Building trust through discipline</p>
-                </motion.div>
+                </div>
               </div>
             </motion.div>
 
-            <motion.div variants={buttonVariants}>
+            <motion.div
+              className="mt-12 text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+            >
               <Button
                 onClick={onOpenWaitlist}
                 size="lg"
