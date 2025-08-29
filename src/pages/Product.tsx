@@ -1,11 +1,7 @@
-import { CreditCard, Shield, TrendingUp, Eye, Clock, AlertTriangle } from 'lucide-react';
+import { CreditCard, Shield, TrendingUp, Eye, Clock, AlertTriangle, Star, Zap, Crown } from 'lucide-react';
 import { DIChart } from '@/components/DIChart';
-import { useInView } from '@/hooks/useInView';
 
 export default function Product() {
-  const [diRef] = useInView();
-  const [clubsRef] = useInView();
-
   return (
     <div className="pt-16">
       {/* Hero Section */}
@@ -15,14 +11,14 @@ export default function Product() {
             Built for <span className="text-gradient">Southeast Asia</span>
           </h1>
           <p className="text-xl text-pyra-muted max-w-3xl mx-auto mb-8">
-            Privacy-first financial tools that turn discipline into currency. 
-            Pay better, rise faster, live smarter.
+            Privacy-first financial tools that transform credit behavior into a valuable asset.
+            Build trust, ascend through tiers, unlock your financial potential.
           </p>
-          
+
           <div className="flex flex-wrap justify-center gap-4">
             {[
               { icon: Shield, text: 'Privacy-first' },
-              { icon: TrendingUp, text: 'Status you earn' },
+              { icon: TrendingUp, text: 'Trust you earn' },
               { icon: CreditCard, text: 'Southeast Asia focus' },
             ].map((badge, i) => (
               <div key={i} className="bg-glass rounded-full px-6 py-3 flex items-center space-x-2">
@@ -34,25 +30,25 @@ export default function Product() {
         </div>
       </section>
 
-      {/* DI Section */}
-      <section ref={diRef} className="py-24 bg-pyra-bg">
+      {/* Financial Discipline Section */}
+      <section className="py-24 bg-pyra-bg">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-heading text-4xl font-bold text-pyra-ink mb-4">
-              The Discipline Index (DI)
+              Financial Discipline Tracking
             </h2>
             <p className="text-xl text-pyra-muted max-w-3xl mx-auto">
-              Your financial habits, quantified. The DI tracks your payment behavior, 
-              utilization patterns, and financial discipline to unlock status and benefits.
+              Your financial habits, quantified. Our system tracks your payment behavior,
+              spending patterns, and financial discipline to unlock status and benefits.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="font-heading text-2xl font-semibold text-pyra-ink mb-6">
-                What builds your DI score:
+                What builds your discipline score:
               </h3>
-              
+
               <div className="space-y-4">
                 {[
                   { icon: Clock, title: 'On-time Ratio', desc: 'Recency-weighted payment timing' },
@@ -82,11 +78,11 @@ export default function Product() {
         </div>
       </section>
 
-      {/* Clubs Preview */}
-      <section ref={clubsRef} className="py-24 bg-navy-700">
+      {/* Pyra Clubs Preview */}
+      <section className="py-24 bg-navy-700">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-heading text-4xl font-bold text-pyra-ink mb-16">
-            The Clubs
+            The Pyra Clubs
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -94,32 +90,35 @@ export default function Product() {
               {
                 name: 'Spark',
                 subtitle: 'Foundation',
-                features: ['Unified bill pay', 'Savings insights', 'First streaks'],
-                gradient: 'from-orange-500 to-red-500'
+                icon: Zap,
+                features: ['Expense tracking', 'Group management', 'Financial education'],
+                gradient: 'from-pyra-teal to-pyra-cyan'
               },
               {
-                name: 'Elevate',
-                subtitle: 'Ascent',
-                features: ['Earned wage access', 'Micro-savings', 'Subscription financing'],
-                gradient: 'from-blue-500 to-purple-500'
+                name: 'Prime',
+                subtitle: 'Advanced',
+                icon: Star,
+                features: ['Unified card management', 'Hidden fee detection', 'Smart reminders'],
+                gradient: 'from-pyra-cyan to-pyra-indigo'
               },
               {
-                name: 'Black',
-                subtitle: 'Apex',
-                features: ['Premium credit lines', 'Luxury marketplace', 'Priority wealth access'],
-                gradient: 'from-gray-700 to-black'
+                name: 'Nova',
+                subtitle: 'Exclusive',
+                icon: Crown,
+                features: ['Luxury marketplace', 'Concierge services', 'Exclusive events'],
+                gradient: 'from-pyra-indigo to-pyra-cyan'
               }
             ].map((club, index) => (
-              <div key={club.name} className="bg-glass rounded-2xl p-8 hover:scale-105 transition-transform duration-300">
+              <div key={club.name} className="bg-glass rounded-2xl p-8">
                 <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${club.gradient} flex items-center justify-center`}>
-                  <div className="w-8 h-8 bg-white/20 clip-triangle" />
+                  <club.icon className="text-white" size={32} />
                 </div>
-                
+
                 <h3 className="font-heading text-2xl font-bold text-pyra-ink mb-2">
                   {club.name}
                 </h3>
                 <p className="text-pyra-muted mb-6">{club.subtitle}</p>
-                
+
                 <ul className="space-y-2 text-sm text-pyra-muted">
                   {club.features.map((feature, i) => (
                     <li key={i} className="flex items-center space-x-2">

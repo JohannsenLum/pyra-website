@@ -1,11 +1,7 @@
 import { Code, BarChart3, Palette, Handshake, ArrowRight, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useInView } from '@/hooks/useInView';
 
 export default function Careers() {
-  const [heroRef] = useInView<HTMLElement>();
-  const [rolesRef] = useInView<HTMLElement>();
-
   const roles = [
     {
       icon: Code,
@@ -40,22 +36,22 @@ export default function Careers() {
   return (
     <div className="pt-16">
       {/* Hero */}
-      <section ref={heroRef} className="py-24 bg-gradient-deep">
+      <section className="py-24 bg-gradient-deep">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-heading text-5xl font-bold text-pyra-ink mb-6">
             Join the <span className="text-gradient">Early Team</span>
           </h1>
           <p className="text-xl text-pyra-muted max-w-3xl mx-auto mb-8">
-            Help us build the financial super-app that turns discipline into currency. 
+            Help us build the financial super-app that turns discipline into currency.
             Shape the future of status and rewards across Southeast Asia.
           </p>
-          
+
           <div className="bg-glass rounded-2xl p-6 max-w-2xl mx-auto">
             <p className="text-pyra-ink font-semibold mb-2">
               🚀 Early-stage opportunity
             </p>
             <p className="text-pyra-muted text-sm">
-              Join as a founding team member and help define financial behavior 
+              Join as a founding team member and help define financial behavior
               for millions across Southeast Asia
             </p>
           </div>
@@ -104,7 +100,7 @@ export default function Careers() {
       </section>
 
       {/* Open Roles */}
-      <section ref={rolesRef} className="py-24 bg-navy-700">
+      <section className="py-24 bg-navy-700">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-heading text-4xl font-bold text-pyra-ink mb-4">
@@ -117,7 +113,7 @@ export default function Careers() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {roles.map((role, index) => (
-              <div key={index} className="bg-glass rounded-2xl p-8 hover:bg-white/10 transition-colors duration-300">
+              <div key={index} className="bg-glass rounded-2xl p-8">
                 <div className="flex items-start space-x-4 mb-6">
                   <div className="w-12 h-12 bg-accent-gradient rounded-xl flex items-center justify-center flex-shrink-0">
                     <role.icon className="text-white" size={20} />
@@ -138,7 +134,7 @@ export default function Careers() {
                   <h4 className="font-semibold text-pyra-ink mb-3">Key Skills:</h4>
                   <div className="flex flex-wrap gap-2">
                     {role.skills.map((skill, i) => (
-                      <span 
+                      <span
                         key={i}
                         className="bg-pyra-bg rounded-full px-3 py-1 text-xs text-pyra-muted"
                       >
@@ -148,8 +144,8 @@ export default function Careers() {
                   </div>
                 </div>
 
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   className="w-full border-white/20 text-pyra-ink hover:bg-white/10"
                 >
                   Apply Now
@@ -169,13 +165,13 @@ export default function Careers() {
               Equal Opportunity Employer
             </h3>
             <p className="text-pyra-muted mb-6 leading-relaxed">
-              Pyra is committed to creating a diverse and inclusive workplace. We welcome 
-              applications from all qualified candidates regardless of race, gender, age, 
+              Pyra is committed to creating a diverse and inclusive workplace. We welcome
+              applications from all qualified candidates regardless of race, gender, age,
               religion, sexual orientation, or any other protected characteristic.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
+              <Button
                 className="bg-accent-gradient btn-sheen font-medium"
                 asChild
               >
@@ -184,8 +180,8 @@ export default function Careers() {
                   Get in Touch
                 </a>
               </Button>
-              
-              <Button 
+
+              <Button
                 variant="outline"
                 className="border-white/20 text-pyra-ink hover:bg-white/10"
                 asChild

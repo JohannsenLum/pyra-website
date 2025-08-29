@@ -25,13 +25,13 @@ export function DIChart() {
     <div className="bg-glass rounded-2xl p-8">
       <div className="text-center mb-8">
         <h3 className="font-heading text-2xl font-bold text-pyra-ink mb-2">
-          Your Discipline Index (DI)
+          Your Financial Discipline Score
         </h3>
         <div className="text-4xl font-bold text-gradient mb-2">
           {averageScore}
         </div>
         <p className="text-pyra-muted">
-          Currently: <span className="text-pyra-cyan font-semibold">Elevate Club</span>
+          Currently: <span className="text-pyra-cyan font-semibold">Prime Club</span>
         </p>
       </div>
 
@@ -47,11 +47,11 @@ export function DIChart() {
               <span className="text-sm font-medium text-pyra-ink">{metric.label}</span>
               <span className="text-sm text-pyra-muted">{metric.value}/{metric.max}</span>
             </div>
-            
+
             <div className="w-full bg-navy-700 rounded-full h-2">
               <div
                 className="h-2 bg-accent-gradient rounded-full transition-all duration-500"
-                style={{ 
+                style={{
                   width: `${(metric.value / metric.max) * 100}%`,
                   animationDelay: `${index * 0.1}s`
                 }}
@@ -70,7 +70,7 @@ export function DIChart() {
 
       <div className="mt-6 pt-6 border-t border-white/10">
         <p className="text-xs text-pyra-muted text-center">
-          DI updates monthly based on your payment behavior and financial habits
+          Score updates monthly based on your payment behavior and financial habits
         </p>
       </div>
     </div>

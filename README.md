@@ -1,73 +1,112 @@
-# Welcome to your Lovable project
+# Pyra - Redefining Credit and Financial Habits in Southeast Asia
 
-## Project info
+Pyra is building an ecosystem where financial discipline is rewarded, trust is monetized, and users ascend aspirational tiers of finance and lifestyle.
 
-**URL**: https://lovable.dev/projects/93bcb653-6b73-48d7-959e-74a0442c7a8a
+## Company Identity
 
-## How can I edit this code?
+- **Name**: Pyra
+- **Tagline**: Redefining Credit and Financial Habits in Southeast Asia
+- **Mission**: To build an ecosystem where financial discipline is rewarded, trust is monetized, and users ascend aspirational tiers of finance and lifestyle.
 
-There are several ways of editing your application.
+## The Pyra Clubs: A Tiered Ecosystem of Trust
 
-**Use Lovable**
+### Prime Club
+- **Target**: CBS Score 1800+
+- **Focus**: Advanced financial tracking and credit management tools
+- **Features**:
+  - Unified Credit Card Management (single dashboard for all cards)
+  - Hidden Fee Detection (AI-powered e-statement scanning)
+  - Smart Reminders + Rewards for Discipline (timely alerts and personalized offers)
+  - Holistic Expense Tracking (across both debit and credit)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/93bcb653-6b73-48d7-959e-74a0442c7a8a) and start prompting.
+### Spark Club
+- **Target**: New-to-credit users and students
+- **Focus**: Building the foundation of financial discipline
+- **Features**:
+  - Expense Tracking (debit-first approach)
+  - Group Expense Management (Splitwise-style tools)
+  - Financial education resources
+  - Habit tracking and goal setting
 
-Changes made via Lovable will be committed automatically to this repo.
+### Nova Club
+- **Target**: Most exclusive, premium tier
+- **Focus**: Earned through discipline, granting access to highest-end financial and lifestyle products
+- **Features**:
+  - Everything in Prime, plus:
+  - Luxury marketplace access
+  - Concierge financial services
+  - Exclusive member events
+  - Premium insurance & wealth products
 
-**Use your preferred IDE**
+## Core Features & Functionality (Phase 1)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prime Club Features
+- Unified Credit Card Management
+- Hidden Fee Detection
+- Smart Reminders + Rewards
+- Holistic Expense Tracking
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Spark Club Features
+- Expense Tracking
+- Group Expense Management
 
-Follow these steps:
+## The Pyra Super-App Vision
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+A layered progression from Credit → Savings → Investments → Lifestyle, where Pyra monetizes trust and rewards responsibility. Your financial discipline becomes your most valuable asset.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Technology Stack
 
-# Step 3: Install the necessary dependencies.
-npm i
+- **Frontend**: React + TypeScript + Tailwind CSS
+- **Styling**: Custom Pyra Design System with dark-first fintech theme
+- **Animations**: CSS keyframes and Tailwind animations
+- **Icons**: Lucide React
+- **Routing**: React Router
+- **Build Tool**: Vite
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Start development server: `npm run dev`
+4. Build for production: `npm run build`
+
+## Design System
+
+The Pyra Design System features:
+- Dark-first fintech theme
+- Brand colors: Indigo, Cyan, Teal
+- Custom animations and keyframes
+- Glass morphism effects
+- Responsive design patterns
+
+## Video Background
+
+The Hero section includes an optional video background for a high-end, minimalist visual experience. To enable:
+1. Add a video file at `/public/hero-background.mp4`
+2. The video will automatically load with play/pause controls
+3. Falls back to animated background if video doesn't load
+
+## Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+├── pages/              # Page components
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+└── index.css           # Global styles and Pyra Design System
 ```
 
-**Edit a file directly in GitHub**
+## Contributing
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+We're building the future of financial discipline. Join us in making financial responsibility rewarding and trust monetizable.
 
-**Use GitHub Codespaces**
+## Contact
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- **Email**: hello@pyra.club
+- **Location**: Singapore, BLOCK71 Incubator
+- **Status**: Pre-Seed, BLOCK71 Incubator Applicant
 
-## What technologies are used for this project?
+---
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/93bcb653-6b73-48d7-959e-74a0442c7a8a) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+© 2024 Pyra. All rights reserved.

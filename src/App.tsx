@@ -9,7 +9,7 @@ import { Footer } from "@/components/Footer";
 import { WaitlistModal } from "@/components/WaitlistModal";
 
 // Pages
-import Home from "./pages/Home";
+import { Home } from "./pages/Home";
 import Product from "./pages/Product";
 import Clubs from "./pages/Clubs";
 import About from "./pages/About";
@@ -31,11 +31,11 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <div className="min-h-screen bg-pyra-bg text-pyra-ink">
+          <div className="min-h-screen bg-background text-foreground">
             <Header onOpenWaitlist={() => setWaitlistOpen(true)} />
             <main>
               <Routes>
-                <Route path="/" element={<Home onOpenWaitlist={() => setWaitlistOpen(true)} />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/product" element={<Product />} />
                 <Route path="/clubs" element={<Clubs />} />
                 <Route path="/about" element={<About />} />
@@ -48,9 +48,9 @@ const App = () => {
               </Routes>
             </main>
             <Footer />
-            <WaitlistModal 
-              isOpen={waitlistOpen} 
-              onClose={() => setWaitlistOpen(false)} 
+            <WaitlistModal
+              isOpen={waitlistOpen}
+              onClose={() => setWaitlistOpen(false)}
             />
           </div>
         </BrowserRouter>

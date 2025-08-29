@@ -24,7 +24,7 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
-				
+
 				// Pyra Brand Colors
 				'pyra-bg': 'hsl(var(--bg))',
 				'navy-700': 'hsl(var(--navy-700))',
@@ -32,8 +32,8 @@ export default {
 				'pyra-cyan': 'hsl(var(--cyan))',
 				'pyra-teal': 'hsl(var(--teal))',
 				'pyra-ink': 'hsl(var(--ink))',
-				'pyra-muted': 'hsl(var(--muted))',
-				
+				'pyra-muted': 'hsl(var(--ink))',
+
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -64,7 +64,7 @@ export default {
 				}
 			},
 			fontFamily: {
-				'heading': ['Plus Jakarta Sans', 'sans-serif'],
+				'heading': ['Playfair Display', 'serif'],
 				'body': ['Inter', 'sans-serif'],
 			},
 			borderRadius: {

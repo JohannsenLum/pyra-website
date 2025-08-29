@@ -1,6 +1,7 @@
-import { ArrowRight, Shield, TrendingUp, Users } from 'lucide-react';
+import { ArrowRight, Shield, TrendingUp, Users, Play, Pause } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useInView } from '@/hooks/useInView';
+import { useState, useRef } from 'react';
 
 interface HeroProps {
   onOpenWaitlist: () => void;
@@ -8,25 +9,72 @@ interface HeroProps {
 
 export function Hero({ onOpenWaitlist }: HeroProps) {
   const [heroRef] = useInView();
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Choose your background type: 'gif' or 'video'
+  const backgroundType = 'video'; // Change this to 'video' if you want to use MP4
+
+  const toggleVideo = () => {
+    if (videoRef.current) {
+      if (isVideoPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsVideoPlaying(!isVideoPlaying);
+    }
+  };
+
+  // Split "Pyra" into individual letters for animation
+  const letters = "Pyra".split("");
 
   return (
-    <section 
+    <section
       ref={heroRef}
-      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-deep"
+      className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-gradient-deep"
     >
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-accent-gradient opacity-10" />
-      
+      {/* Background Options */}
+      {backgroundType === 'video' ? (
+        /* Video Background */
+        <div className="absolute inset-0 overflow-hidden">
+          <video
+            ref={videoRef}
+            className="w-full h-full object-cover object-top opacity-100 " // object-top for cropping
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/placeholder.svg"
+            onLoadStart={() => console.log('Video loading started')}
+            onLoadedData={() => console.log('Video data loaded successfully')}
+            onError={(e) => console.error('Video error:', e)}
+          >
+            <source src="/hero-background7.mp4" type="video/mp4" />
+            <p className="text-white">Your browser does not support the video tag.</p>
+          </video>
+        </div>
+      ) : (
+        /* GIF Background */
+        <div className="absolute inset-0">
+          <img
+            src="/hero-background2.gif"
+            alt="Pyra background animation"
+            className="w-full h-full object-cover opacity-100"
+          />
+        </div>
+      )}
+
       {/* Triangle Particles */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(12)].map((_, i) => (
           <div
             key={i}
-            className="triangle-particle absolute"
+            className="triangle-particle-premium absolute"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 6}s`,
+              animationDelay: `${Math.random() * 8}s`,
             }}
           />
         ))}
@@ -34,72 +82,28 @@ export function Hero({ onOpenWaitlist }: HeroProps) {
 
       <div className="relative z-10 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
-          {/* Main Headline */}
-          <h1 className="font-heading text-5xl md:text-7xl font-bold text-pyra-ink mb-6">
-            Pyra — The Credit Club of{' '}
-            <span className="text-gradient">Southeast Asia</span>
-          </h1>
-
-          {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-pyra-muted mb-8 max-w-3xl mx-auto leading-relaxed">
-            Pay every card in one place, avoid hidden charges, and earn your way from Spark to Black 
-            with habits that build your future.
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button 
-              onClick={onOpenWaitlist}
-              size="lg"
-              className="bg-accent-gradient btn-sheen font-semibold px-8 py-3 text-lg"
+          {/* Company Identity */}
+          <div className="mb-8">
+            <h1 className="font-heading text-9xl md:text-[12rem] font-bold text-white mb-6">
+              {letters.map((letter, index) => (
+                <span
+                  key={index}
+                  className="inline-block animate-fade-in"
+                  style={{
+                    animationDelay: `${0.3 + index * 0.2}s`,
+                    animationFillMode: 'both'
+                  }}
+                >
+                  {letter}
+                </span>
+              ))}
+            </h1>
+            <p
+              className="text-2xl md:text-4xl text-white font-medium mb-2 animate-fade-in"
+              style={{ animationDelay: '1.2s', animationFillMode: 'both' }}
             >
-              Join the Waitlist
-              <ArrowRight className="ml-2" size={20} />
-            </Button>
-            <Button 
-              variant="outline"
-              size="lg"
-              className="border-white/20 text-pyra-ink hover:bg-white/10 px-8 py-3 text-lg"
-              onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              See the Product
-            </Button>
-          </div>
-
-          {/* Badges */}
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            {[
-              { icon: TrendingUp, text: 'Pre-Seed' },
-              { icon: Shield, text: 'BLOCK71 Incubator Applicant' },
-              { icon: Users, text: 'Fintech • SEA' },
-              { icon: Shield, text: 'Privacy-First' },
-            ].map((badge, i) => (
-              <div
-                key={i}
-                className="bg-glass rounded-full px-4 py-2 flex items-center space-x-2"
-              >
-                <badge.icon size={16} className="text-pyra-cyan" />
-                <span className="text-sm text-pyra-muted">{badge.text}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* Proof Bar */}
-          <div className="border-t border-white/10 pt-8">
-            <div className="flex flex-col md:flex-row justify-center items-center gap-8 text-pyra-muted">
-              <span className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-pyra-cyan rounded-full" />
-                <span>Never pay a late fee again</span>
-              </span>
-              <span className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-pyra-cyan rounded-full" />
-                <span>Transparent charges</span>
-              </span>
-              <span className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-pyra-cyan rounded-full" />
-                <span>Status you earn</span>
-              </span>
-            </div>
+              Redefining Credit and Financial Habits in Southeast Asia
+            </p>
           </div>
         </div>
       </div>

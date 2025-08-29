@@ -1,5 +1,5 @@
 interface ClubBadgeProps {
-  tier: 'spark' | 'elevate' | 'black';
+  tier: 'spark' | 'prime' | 'nova';
   title: string;
   threshold: string;
   features: string[];
@@ -8,22 +8,22 @@ interface ClubBadgeProps {
 
 const tierStyles = {
   spark: {
-    gradient: 'from-orange-500 to-red-500',
-    bg: 'bg-orange-500/10',
-    border: 'border-orange-500/20',
-    text: 'text-orange-400'
+    gradient: 'from-pyra-teal to-pyra-cyan',
+    bg: 'bg-pyra-teal/10',
+    border: 'border-pyra-teal/20',
+    text: 'text-pyra-teal'
   },
-  elevate: {
-    gradient: 'from-blue-500 to-purple-500',
-    bg: 'bg-blue-500/10',
-    border: 'border-blue-500/20',
-    text: 'text-blue-400'
+  prime: {
+    gradient: 'from-pyra-cyan to-pyra-indigo',
+    bg: 'bg-pyra-cyan/10',
+    border: 'border-pyra-cyan/20',
+    text: 'text-pyra-cyan'
   },
-  black: {
-    gradient: 'from-gray-700 to-black',
-    bg: 'bg-gray-800/10',
-    border: 'border-gray-600/20',
-    text: 'text-gray-300'
+  nova: {
+    gradient: 'from-pyra-indigo to-pyra-cyan',
+    bg: 'bg-pyra-indigo/10',
+    border: 'border-pyra-indigo/20',
+    text: 'text-pyra-indigo'
   }
 };
 
