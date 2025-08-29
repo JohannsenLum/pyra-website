@@ -1,178 +1,376 @@
-import { Calendar, ArrowRight, TrendingUp, Shield, Users } from 'lucide-react';
+import { Calendar, Clock, ArrowRight, TrendingUp, CreditCard, Shield, Users, Zap } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
 
 export default function Blog() {
-  const posts = [
+  const featuredPost = {
+    title: 'The Psychology of Financial Discipline: Why Traditional Rewards Fail',
+    excerpt: 'Explore how Pyra\'s behavior-first approach creates lasting financial habits by understanding the psychology behind discipline and delayed gratification.',
+    category: 'Behavioral Finance',
+    readTime: '8 min read',
+    date: 'December 15, 2024',
+    image: '/placeholder.svg'
+  };
+
+  const blogPosts = [
     {
-      title: 'Building Financial Discipline in Southeast Asia',
-      excerpt: 'How cultural and economic factors shape financial habits across the region, and what this means for building better money management systems.',
-      date: 'March 15, 2024',
-      category: 'Financial Education',
+      title: 'Building Credit in Southeast Asia: A Regional Perspective',
+      excerpt: 'Understanding the unique challenges and opportunities of building credit across different Southeast Asian markets.',
+      category: 'Credit Building',
+      readTime: '6 min read',
+      date: 'December 12, 2024',
+      icon: TrendingUp
+    },
+    {
+      title: 'The Hidden Costs of Credit Card Rewards Programs',
+      excerpt: 'How traditional points systems actually encourage overspending and what Pyra does differently.',
+      category: 'Credit Cards',
       readTime: '5 min read',
-      image: '/placeholder.svg'
+      date: 'December 10, 2024',
+      icon: CreditCard
     },
     {
-      title: 'The Psychology of Credit Card Rewards',
-      excerpt: 'Why traditional reward systems encourage spending, and how Pyra flips this model to reward responsible financial behavior instead.',
-      date: 'March 10, 2024',
-      category: 'Behavioral Finance',
+      title: 'Privacy-First Finance: Why It Matters in 2024',
+      excerpt: 'The importance of protecting your financial data and how Pyra ensures your privacy while building trust.',
+      category: 'Privacy & Security',
       readTime: '7 min read',
-      image: '/placeholder.svg'
+      date: 'December 8, 2024',
+      icon: Shield
     },
     {
-      title: 'Privacy-First Financial Technology',
-      excerpt: 'How we\'re building financial tools that protect user data while still providing powerful insights and personalized experiences.',
-      date: 'March 5, 2024',
-      category: 'Technology',
-      readTime: '6 min read',
-      image: '/placeholder.svg'
-    },
-    {
-      title: 'Club Status: Beyond Traditional Loyalty Programs',
-      excerpt: 'How Pyra Clubs create meaningful status based on financial discipline rather than arbitrary spending thresholds.',
-      date: 'February 28, 2024',
-      category: 'Product',
+      title: 'Community-Driven Financial Growth: The Pyra Way',
+      excerpt: 'How building a community of disciplined users creates better outcomes for everyone involved.',
+      category: 'Community',
       readTime: '4 min read',
-      image: '/placeholder.svg'
+      date: 'December 6, 2024',
+      icon: Users
     },
     {
-      title: 'The Future of Credit in Southeast Asia',
-      excerpt: 'Emerging trends in credit markets across the region and how technology is democratizing access to financial services.',
-      date: 'February 20, 2024',
-      category: 'Market Trends',
-      readTime: '8 min read',
-      image: '/placeholder.svg'
+      title: 'From Spark to Nova: Your Journey Through the Pyra Clubs',
+      excerpt: 'A detailed guide to ascending through Pyra\'s tiered system and unlocking exclusive benefits.',
+      category: 'Pyra Clubs',
+      readTime: '9 min read',
+      date: 'December 4, 2024',
+      icon: Zap
     },
     {
-      title: 'Hidden Fees: The Silent Wealth Killer',
-      excerpt: 'Common hidden charges in financial products and how our AI-powered detection helps users avoid unnecessary costs.',
-      date: 'February 15, 2024',
-      category: 'Financial Tips',
+      title: 'The Future of Financial Status: Beyond Traditional Credit Scores',
+      excerpt: 'How Pyra is redefining what it means to have good financial standing in the digital age.',
+      category: 'Innovation',
       readTime: '6 min read',
-      image: '/placeholder.svg'
+      date: 'December 2, 2024',
+      icon: TrendingUp
     }
   ];
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const heroVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const featuredPostVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const blogCardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const buttonVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1 },
+    hover: { scale: 1.05 }
+  };
 
   return (
     <div className="pt-16">
       {/* Hero */}
-      <section className="py-24 bg-gradient-deep">
+      <motion.section
+        className="py-24 bg-gradient-deep"
+        variants={heroVariants}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-heading text-5xl font-bold text-pyra-ink mb-6">
-            Pyra <span className="text-gradient">Blog</span>
-          </h1>
-          <p className="text-xl text-pyra-muted max-w-3xl mx-auto">
-            Insights on financial discipline, Southeast Asian markets, and the future of responsible finance
-          </p>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.h1
+              className="font-heading text-5xl font-bold text-pyra-ink mb-6"
+              variants={itemVariants}
+            >
+              Insights & <span className="text-gradient">Perspectives</span>
+            </motion.h1>
+            <motion.p
+              className="text-xl text-pyra-muted max-w-3xl mx-auto"
+              variants={itemVariants}
+            >
+              Deep dives into financial behavior, credit innovation, and the future of
+              financial discipline across Southeast Asia.
+            </motion.p>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Featured Post */}
-      <section className="py-16 bg-pyra-bg">
+      <motion.section
+        className="py-24 bg-pyra-bg"
+        variants={featuredPostVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-glass rounded-2xl p-8 lg:p-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="flex items-center space-x-4 mb-4">
-                  <span className="bg-accent-gradient text-white px-3 py-1 rounded-full text-sm font-medium">
-                    Featured
-                  </span>
-                  <span className="text-pyra-muted text-sm">March 15, 2024</span>
+          <motion.div
+            className="bg-glass rounded-2xl overflow-hidden"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-2">
+              <motion.div
+                className="p-8 lg:p-12"
+                variants={itemVariants}
+              >
+                <motion.div
+                  className="inline-block bg-accent-gradient rounded-full px-4 py-2 text-sm font-medium text-white mb-4"
+                  variants={itemVariants}
+                >
+                  {featuredPost.category}
+                </motion.div>
+
+                <motion.h2
+                  className="font-heading text-3xl font-bold text-pyra-ink mb-4"
+                  variants={itemVariants}
+                >
+                  {featuredPost.title}
+                </motion.h2>
+
+                <motion.p
+                  className="text-lg text-pyra-muted mb-6 leading-relaxed"
+                  variants={itemVariants}
+                >
+                  {featuredPost.excerpt}
+                </motion.p>
+
+                <motion.div
+                  className="flex items-center space-x-6 text-sm text-pyra-muted mb-6"
+                  variants={itemVariants}
+                >
+                  <div className="flex items-center space-x-2">
+                    <Calendar size={16} />
+                    <span>{featuredPost.date}</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Clock size={16} />
+                    <span>{featuredPost.readTime}</span>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  variants={buttonVariants}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                >
+                  <Button
+                    className="bg-accent-gradient btn-sheen font-medium"
+                  >
+                    Read Full Article
+                    <ArrowRight className="ml-2" size={16} />
+                  </Button>
+                </motion.div>
+              </motion.div>
+
+              <motion.div
+                className="bg-gradient-to-br from-pyra-cyan to-pyra-indigo p-8 lg:p-12 flex items-center justify-center"
+                variants={itemVariants}
+              >
+                <div className="text-center text-white">
+                  <div className="text-6xl mb-4">📊</div>
+                  <p className="text-lg font-medium">Featured Article</p>
+                  <p className="text-white/80">Behavioral Finance Deep Dive</p>
                 </div>
-
-                <h2 className="font-heading text-3xl font-bold text-pyra-ink mb-4">
-                  Building Financial Discipline in Southeast Asia
-                </h2>
-
-                <p className="text-pyra-muted leading-relaxed mb-6">
-                  How cultural and economic factors shape financial habits across the region, and what this means
-                  for building better money management systems that work for local users.
-                </p>
-
-                <div className="flex items-center space-x-4 text-sm text-pyra-muted mb-6">
-                  <span>Financial Education</span>
-                  <span>•</span>
-                  <span>5 min read</span>
-                </div>
-
-                <button className="inline-flex items-center text-pyra-cyan hover:text-pyra-ink transition-colors font-medium">
-                  Read Full Article
-                  <ArrowRight className="ml-2" size={16} />
-                </button>
-              </div>
-
-              <div className="relative">
-                <img
-                  src="/placeholder.svg"
-                  alt="Featured post"
-                  className="w-full h-64 object-cover rounded-xl"
-                />
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
-      {/* All Posts */}
-      <section className="py-24 bg-navy-700">
+      {/* Latest Insights */}
+      <motion.section
+        className="py-24 bg-navy-700"
+        variants={itemVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-4xl font-bold text-pyra-ink mb-4">
+          <motion.div
+            className="text-center mb-16"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.h2
+              className="font-heading text-4xl font-bold text-pyra-ink mb-4"
+              variants={itemVariants}
+            >
               Latest Insights
-            </h2>
-            <p className="text-xl text-pyra-muted">
-              Stay updated with the latest trends in financial technology and behavior
-            </p>
-          </div>
+            </motion.h2>
+            <motion.p
+              className="text-xl text-pyra-muted"
+              variants={itemVariants}
+            >
+              Stay updated with the latest trends in financial behavior and credit innovation
+            </motion.p>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.slice(1).map((post, index) => (
-              <article key={index} className="bg-glass rounded-2xl overflow-hidden">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-48 object-cover"
-                />
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {blogPosts.map((post, index) => (
+              <motion.article
+                key={index}
+                className="bg-glass rounded-2xl p-6"
+                variants={blogCardVariants}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                whileHover={{ scale: 1.02, transition: { duration: 0.2, ease: "easeOut" } }}
+              >
+                <motion.div
+                  className="w-12 h-12 bg-accent-gradient rounded-xl flex items-center justify-center mb-4"
+                  variants={itemVariants}
+                >
+                  <post.icon className="text-white" size={20} />
+                </motion.div>
 
-                <div className="p-6">
-                  <div className="flex items-center space-x-4 mb-3">
-                    <span className="text-pyra-cyan text-sm font-medium">
-                      {post.category}
-                    </span>
-                    <span className="text-pyra-muted text-sm">
-                      {post.readTime}
-                    </span>
-                  </div>
+                <motion.div
+                  className="inline-block bg-pyra-bg rounded-full px-3 py-1 text-xs font-medium text-pyra-cyan mb-3"
+                  variants={itemVariants}
+                >
+                  {post.category}
+                </motion.div>
 
-                  <h3 className="font-heading text-xl font-semibold text-pyra-ink mb-3 line-clamp-2">
-                    {post.title}
-                  </h3>
+                <motion.h3
+                  className="font-heading text-xl font-semibold text-pyra-ink mb-3 line-clamp-2"
+                  variants={itemVariants}
+                >
+                  {post.title}
+                </motion.h3>
 
-                  <p className="text-pyra-muted text-sm leading-relaxed mb-4 line-clamp-3">
-                    {post.excerpt}
-                  </p>
+                <motion.p
+                  className="text-pyra-muted text-sm mb-4 line-clamp-3"
+                  variants={itemVariants}
+                >
+                  {post.excerpt}
+                </motion.p>
 
-                  <div className="flex items-center justify-between">
-                    <span className="text-pyra-muted text-sm">
-                      {post.date}
-                    </span>
+                <motion.div
+                  className="flex items-center justify-between text-xs text-pyra-muted mb-4"
+                  variants={itemVariants}
+                >
+                  <span>{post.date}</span>
+                  <span className="flex items-center space-x-1">
+                    <Clock size={12} />
+                    <span>{post.readTime}</span>
+                  </span>
+                </motion.div>
 
-                    <button className="inline-flex items-center text-pyra-cyan hover:text-pyra-ink transition-colors text-sm font-medium">
-                      Read More
-                      <ArrowRight className="ml-1" size={14} />
-                    </button>
-                  </div>
-                </div>
-              </article>
+                <motion.div
+                  variants={buttonVariants}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                >
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full border-white/20 text-pyra-ink hover:bg-white/10"
+                  >
+                    Read More
+                    <ArrowRight className="ml-2" size={14} />
+                  </Button>
+                </motion.div>
+              </motion.article>
             ))}
-          </div>
-
-          <div className="text-center mt-16">
-            <button className="bg-accent-gradient btn-sheen font-medium px-8 py-3 rounded-xl">
-              Load More Articles
-            </button>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
+
+      {/* Newsletter Signup */}
+      <motion.section
+        className="py-16 bg-pyra-bg"
+        variants={itemVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            className="bg-glass rounded-2xl p-8 max-w-2xl mx-auto"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.h3
+              className="font-heading text-2xl font-semibold text-pyra-ink mb-4"
+              variants={itemVariants}
+            >
+              Stay Informed
+            </motion.h3>
+            <motion.p
+              className="text-pyra-muted mb-6"
+              variants={itemVariants}
+            >
+              Get the latest insights on financial behavior, credit innovation, and Pyra updates
+              delivered to your inbox.
+            </motion.p>
+
+            <motion.div
+              variants={buttonVariants}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+            >
+              <Button
+                className="bg-accent-gradient btn-sheen font-medium"
+              >
+                Subscribe to Newsletter
+                <ArrowRight className="ml-2" size={16} />
+              </Button>
+            </motion.div>
+          </motion.div>
+        </div>
+      </motion.section>
     </div>
   );
 }

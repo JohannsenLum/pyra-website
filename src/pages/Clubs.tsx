@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ClubBadge } from '@/components/ClubBadge';
 import { TrendingUp, ArrowUp, RotateCcw, Star, Zap, Crown } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Clubs() {
   const [activeClub, setActiveClub] = useState<'spark' | 'prime' | 'nova'>('prime');
@@ -49,30 +50,96 @@ export default function Clubs() {
     }
   ];
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const heroVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const clubCardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const progressItemVariants = {
+    hidden: { opacity: 0, x: -40 },
+    visible: { opacity: 1, x: 0 }
+  };
+
   return (
     <div className="pt-16">
       {/* Hero */}
-      <section className="py-24 bg-gradient-deep">
+      <motion.section
+        className="py-24 bg-gradient-deep"
+        variants={heroVariants}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-heading text-5xl font-bold text-pyra-ink mb-6">
-            Status You <span className="text-gradient">Earn</span>
-          </h1>
-          <p className="text-xl text-pyra-muted max-w-3xl mx-auto">
-            Rise through the Pyra Clubs based on your financial discipline.
-            No arbitrary spending requirements—just good habits, rewarded.
-          </p>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.h1
+              className="font-heading text-5xl font-bold text-pyra-ink mb-6"
+              variants={itemVariants}
+            >
+              Status You <span className="text-gradient">Earn</span>
+            </motion.h1>
+            <motion.p
+              className="text-xl text-pyra-muted max-w-3xl mx-auto"
+              variants={itemVariants}
+            >
+              Rise through the Pyra Clubs based on your financial discipline.
+              No arbitrary spending requirements—just good habits, rewarded.
+            </motion.p>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Clubs Grid */}
-      <section className="py-24 bg-pyra-bg">
+      <motion.section
+        className="py-24 bg-pyra-bg"
+        variants={itemVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {clubs.map((club) => (
-              <div
+              <motion.div
                 key={club.tier}
                 className="cursor-pointer"
                 onClick={() => setActiveClub(club.tier)}
+                variants={clubCardVariants}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                whileHover={{ scale: 1.05, transition: { duration: 0.2, ease: "easeOut" } }}
               >
                 <ClubBadge
                   tier={club.tier}
@@ -81,39 +148,75 @@ export default function Clubs() {
                   features={club.features}
                   isActive={activeClub === club.tier}
                 />
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Progress Demo */}
-      <section className="py-24 bg-navy-700">
+      <motion.section
+        className="py-24 bg-navy-700"
+        variants={itemVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-4xl font-bold text-pyra-ink mb-4">
+          <motion.div
+            className="text-center mb-16"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.h2
+              className="font-heading text-4xl font-bold text-pyra-ink mb-4"
+              variants={itemVariants}
+            >
               Level Up Your Status
-            </h2>
-            <p className="text-xl text-pyra-muted max-w-2xl mx-auto">
+            </motion.h2>
+            <motion.p
+              className="text-xl text-pyra-muted max-w-2xl mx-auto"
+              variants={itemVariants}
+            >
               See how good habits translate to club advancement
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
-          <div className="max-w-2xl mx-auto bg-glass rounded-2xl p-8">
-            <div className="text-center mb-8">
+          <motion.div
+            className="max-w-2xl mx-auto bg-glass rounded-2xl p-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.div
+              className="text-center mb-8"
+              variants={itemVariants}
+            >
               <h3 className="font-heading text-2xl font-semibold text-pyra-ink mb-2">
                 Recent Financial Discipline Improvements
               </h3>
               <p className="text-pyra-muted">Your habits in action</p>
-            </div>
+            </motion.div>
 
-            <div className="space-y-4">
+            <motion.div
+              className="space-y-4"
+              variants={containerVariants}
+            >
               {[
                 { change: '+3 points', reason: '3 consecutive on-time payments', icon: TrendingUp },
                 { change: '+2 points', reason: 'Utilization maintained under 30%', icon: ArrowUp },
                 { change: '+1 point', reason: 'Autopay setup for new card', icon: RotateCcw },
               ].map((item, index) => (
-                <div key={index} className="flex items-center justify-between p-4 bg-pyra-bg rounded-xl">
+                <motion.div
+                  key={index}
+                  className="flex items-center justify-between p-4 bg-pyra-bg rounded-xl"
+                  variants={progressItemVariants}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                >
                   <div className="flex items-center space-x-3">
                     <div className="w-8 h-8 bg-accent-gradient rounded-lg flex items-center justify-center">
                       <item.icon className="text-white" size={16} />
@@ -121,37 +224,59 @@ export default function Clubs() {
                     <span className="text-pyra-ink">{item.reason}</span>
                   </div>
                   <span className="text-pyra-cyan font-semibold">{item.change}</span>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
 
-            <div className="mt-8 pt-6 border-t border-white/10 text-center">
+            <motion.div
+              className="mt-8 pt-6 border-t border-white/10 text-center"
+              variants={itemVariants}
+            >
               <p className="text-sm text-pyra-muted mb-2">
                 Current Discipline Score: <span className="text-pyra-cyan font-semibold">78</span>
               </p>
               <p className="text-xs text-pyra-muted">
                 7 points away from Nova Club
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Non-Punitive Messaging */}
-      <section className="py-16 bg-pyra-bg">
+      <motion.section
+        className="py-16 bg-pyra-bg"
+        variants={itemVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-glass rounded-2xl p-8 max-w-3xl mx-auto">
-            <h3 className="font-heading text-xl font-semibold text-pyra-ink mb-4">
+          <motion.div
+            className="bg-glass rounded-2xl p-8 max-w-3xl mx-auto"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.h3
+              className="font-heading text-xl font-semibold text-pyra-ink mb-4"
+              variants={itemVariants}
+            >
               No Penalties, Only Progress
-            </h3>
-            <p className="text-pyra-muted">
+            </motion.h3>
+            <motion.p
+              className="text-pyra-muted"
+              variants={itemVariants}
+            >
               Club status can only move up or stay stable. Temporary dips in financial discipline don't
               immediately affect your club—we understand life happens. Focus on building
               good habits, and your status will follow.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }
