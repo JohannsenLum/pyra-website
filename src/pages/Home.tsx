@@ -82,10 +82,7 @@ export function Home() {
     visible: { opacity: 1, y: 0 }
   };
 
-  const heroVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-  };
+
 
   const buttonVariants = {
     hidden: { opacity: 0, scale: 0.9 },
@@ -119,7 +116,7 @@ export function Home() {
 
       {/* Founder Quote Section */}
       <motion.section
-        className="py-16"
+        className="min-h-[50vh] flex items-center justify-center"
         style={{ backgroundColor: '#0A0A0A' }}
         initial="hidden"
         whileInView="visible"
@@ -191,7 +188,7 @@ export function Home() {
 
       {/* Mission & Introduction Section */}
       <motion.section
-        className="py-16"
+        className="min-h-[50vh] flex items-center justify-center"
         style={{ backgroundColor: '#111315' }}
         initial="hidden"
         whileInView="visible"
@@ -450,7 +447,7 @@ export function Home() {
 
       {/* Pyra Super-App Vision Section */}
       <motion.section
-        className="py-24"
+        className="min-h-screen py-24"
         style={{ backgroundColor: '#141414' }}
         variants={sectionVariants}
         initial="hidden"
@@ -485,124 +482,497 @@ export function Home() {
               We start with the habit that matters—repayment. As members prove discipline, we unlock products that match their behavior: subscription financing, savings, earned wage access, insurance, premium lines via partners, and a curated marketplace. Step by step, Pyra becomes your trusted financial hub for SEA.
             </motion.p>
 
-            {/* Sticky Scrolling Vision Tiers */}
+            {/* Enhanced Sticky Scrolling Vision Tiers */}
             <div className="relative">
               {/* Credit Tier - Foundation */}
               <motion.div
-                className="sticky top-32 mb-32"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-20% 0px" }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="sticky top-0 min-h-screen flex items-center justify-center mb-32"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: "-10% 0px" }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
               >
-                <div className="bg-premium-glass rounded-2xl p-8 md:p-12 border border-white/10 shimmer-border max-w-2xl">
-                  <div className="flex items-center gap-6 mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full flex items-center justify-center">
-                      <Target className="text-white" size={32} />
-                    </div>
-                    <div>
-                      <h3 className="font-heading text-2xl font-bold text-white mb-2">Credit Foundation</h3>
-                      <p className="text-cyan-400 font-medium">Building trust through discipline</p>
+                <div className="relative w-full max-w-6xl mx-auto px-6">
+                  {/* Background Image Placeholder - You can add your image here */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 to-orange-400/10 rounded-3xl blur-3xl"></div>
+
+                  <div className="relative bg-premium-glass/80 backdrop-blur-xl rounded-3xl p-12 md:p-16 border border-white/20 shimmer-border overflow-hidden">
+                    {/* Animated Background Elements */}
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-yellow-400/20 to-orange-400/20 rounded-full blur-3xl animate-pulse"></div>
+                    <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+
+                    <div className="relative z-10">
+                      <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12">
+                        <motion.div
+                          className="w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-2xl flex items-center justify-center shadow-2xl"
+                          initial={{ scale: 0, rotate: -180 }}
+                          whileInView={{ scale: 1, rotate: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+                        >
+                          <Target className="text-white" size={48} />
+                        </motion.div>
+
+                        <div className="flex-1 text-center lg:text-left">
+                          <motion.h3
+                            className="font-heading text-4xl md:text-5xl font-bold text-white mb-4"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
+                          >
+                            Credit Foundation
+                          </motion.h3>
+                          <motion.p
+                            className="text-cyan-400 font-semibold text-xl mb-6"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.7 }}
+                          >
+                            Building trust through discipline
+                          </motion.p>
+                          <motion.p
+                            className="text-white/90 leading-relaxed text-lg max-w-2xl mx-auto lg:mx-0"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
+                          >
+                            Start your journey with unified bill pay, late-fee protection, and hidden charge detection. Build your Discipline Index (DI) score through consistent repayment behavior and unlock the foundation of financial excellence.
+                          </motion.p>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <p className="text-white/80 leading-relaxed">
-                    Start your journey with unified bill pay, late-fee protection, and hidden charge detection. Build your Discipline Index (DI) score through consistent repayment behavior.
-                  </p>
                 </div>
               </motion.div>
 
               {/* Savings Tier - Growth */}
               <motion.div
-                className="sticky top-32 mb-32"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-20% 0px" }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="sticky top-0 min-h-screen flex items-center justify-center mb-32"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: "-10% 0px" }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
               >
-                <div className="bg-premium-glass rounded-2xl p-8 md:p-12 border border-white/10 shimmer-border max-w-2xl ml-auto">
-                  <div className="flex items-center gap-6 mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-full flex items-center justify-center">
-                      <Wallet className="text-white" size={32} />
-                    </div>
-                    <div>
-                      <h3 className="font-heading text-2xl font-bold text-white mb-2">Savings & Growth</h3>
-                      <p className="text-cyan-400 font-medium">Smart saving & financial goals</p>
+                <div className="relative w-full max-w-6xl mx-auto px-6">
+                  {/* Background Image Placeholder - You can add your image here */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 to-blue-400/10 rounded-3xl blur-3xl"></div>
+
+                  <div className="relative bg-premium-glass/80 backdrop-blur-xl rounded-3xl p-12 md:p-16 border border-white/20 shimmer-border overflow-hidden">
+                    {/* Animated Background Elements */}
+                    <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-full blur-3xl animate-pulse"></div>
+                    <div className="absolute bottom-0 right-0 w-48 h-48 bg-gradient-to-br from-teal-400/20 to-green-400/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+
+                    <div className="relative z-10">
+                      <div className="flex flex-col lg:flex-row-reverse items-center lg:items-start gap-8 lg:gap-12">
+                        <motion.div
+                          className="w-24 h-24 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-2xl flex items-center justify-center shadow-2xl"
+                          initial={{ scale: 0, rotate: 180 }}
+                          whileInView={{ scale: 1, rotate: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+                        >
+                          <Wallet className="text-white" size={48} />
+                        </motion.div>
+
+                        <div className="flex-1 text-center lg:text-right">
+                          <motion.h3
+                            className="font-heading text-4xl md:text-5xl font-bold text-white mb-4"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
+                          >
+                            Savings & Growth
+                          </motion.h3>
+                          <motion.p
+                            className="text-cyan-400 font-semibold text-xl mb-6"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.7 }}
+                          >
+                            Smart saving & financial goals
+                          </motion.p>
+                          <motion.p
+                            className="text-white/90 leading-relaxed text-lg max-w-2xl mx-auto lg:mx-0"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
+                          >
+                            Unlock savings tools, subscription financing, and insurance access. Your proven discipline opens doors to wealth-building opportunities, partner offers, and the next level of financial sophistication.
+                          </motion.p>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <p className="text-white/80 leading-relaxed">
-                    Unlock savings tools, subscription financing, and insurance access. Your proven discipline opens doors to wealth-building opportunities and partner offers.
-                  </p>
                 </div>
               </motion.div>
 
               {/* Investments Tier - Wealth */}
               <motion.div
-                className="sticky top-32 mb-32"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-20% 0px" }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="sticky top-0 min-h-screen flex items-center justify-center mb-32"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: "-10% 0px" }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
               >
-                <div className="bg-premium-glass rounded-2xl p-8 md:p-12 border border-white/10 shimmer-border max-w-2xl">
-                  <div className="flex items-center gap-6 mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-teal-400 to-green-400 rounded-full flex items-center justify-center">
-                      <BarChart3 className="text-white" size={32} />
-                    </div>
-                    <div>
-                      <h3 className="font-heading text-2xl font-bold text-white mb-2">Investments & Wealth</h3>
-                      <p className="text-teal-400 font-medium">Portfolio management & wealth building</p>
+                <div className="relative w-full max-w-6xl mx-auto px-6">
+                  {/* Background Image Placeholder - You can add your image here */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-teal-400/10 to-green-400/10 rounded-3xl blur-3xl"></div>
+
+                  <div className="relative bg-premium-glass/80 backdrop-blur-xl rounded-3xl p-12 md:p-16 border border-white/20 shimmer-border overflow-hidden">
+                    {/* Animated Background Elements */}
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-teal-400/20 to-green-400/20 rounded-full blur-3xl animate-pulse"></div>
+                    <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-br from-yellow-400/20 to-orange-400/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+
+                    <div className="relative z-10">
+                      <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12">
+                        <motion.div
+                          className="w-24 h-24 bg-gradient-to-br from-teal-400 to-green-400 rounded-2xl flex items-center justify-center shadow-2xl"
+                          initial={{ scale: 0, rotate: -180 }}
+                          whileInView={{ scale: 1, rotate: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+                        >
+                          <BarChart3 className="text-white" size={48} />
+                        </motion.div>
+
+                        <div className="flex-1 text-center lg:text-left">
+                          <motion.h3
+                            className="font-heading text-4xl md:text-5xl font-bold text-white mb-4"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
+                          >
+                            Investments & Wealth
+                          </motion.h3>
+                          <motion.p
+                            className="text-teal-400 font-semibold text-xl mb-6"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
+                          >
+                            Portfolio management & wealth building
+                          </motion.p>
+                          <motion.p
+                            className="text-white/90 leading-relaxed text-lg max-w-2xl mx-auto lg:mx-0"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
+                          >
+                            Access earned wage solutions, EMI on card bills, and curated partner marketplace. Your financial maturity unlocks sophisticated wealth management tools and advanced investment opportunities.
+                          </motion.p>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <p className="text-white/80 leading-relaxed">
-                    Access earned wage solutions, EMI on card bills, and curated partner marketplace. Your financial maturity unlocks sophisticated wealth management tools.
-                  </p>
                 </div>
               </motion.div>
 
               {/* Lifestyle Tier - Apex */}
               <motion.div
-                className="sticky top-32 mb-16"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-20% 0px" }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="sticky top-0 min-h-screen flex items-center justify-center mb-16"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: "-10% 0px" }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
               >
-                <div className="bg-premium-glass rounded-2xl p-8 md:p-12 border border-white/10 shimmer-border max-w-2xl ml-auto">
-                  <div className="flex items-center gap-6 mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full flex items-center justify-center">
-                      <Crown className="text-white" size={32} />
-                    </div>
-                    <div>
-                      <h3 className="font-heading text-2xl font-bold text-white mb-2">Lifestyle & Premium</h3>
-                      <p className="text-yellow-400 font-medium">Exclusive access & premium experiences</p>
+                <div className="relative w-full max-w-6xl mx-auto px-6">
+                  {/* Background Image Placeholder - You can add your image here */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 to-orange-400/10 rounded-3xl blur-3xl"></div>
+
+                  <div className="relative bg-premium-glass/80 backdrop-blur-xl rounded-3xl p-12 md:p-16 border border-white/20 shimmer-border overflow-hidden">
+                    {/* Animated Background Elements */}
+                    <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-yellow-400/20 to-orange-400/20 rounded-full blur-3xl animate-pulse"></div>
+                    <div className="absolute bottom-0 right-0 w-48 h-48 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+
+                    <div className="relative z-10">
+                      <div className="flex flex-col lg:flex-row-reverse items-center lg:items-start gap-8 lg:gap-12">
+                        <motion.div
+                          className="w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-2xl flex items-center justify-center shadow-2xl"
+                          initial={{ scale: 0, rotate: 180 }}
+                          whileInView={{ scale: 1, rotate: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+                        >
+                          <Crown className="text-white" size={48} />
+                        </motion.div>
+
+                        <div className="flex-1 text-center lg:text-right">
+                          <motion.h3
+                            className="font-heading text-4xl md:text-5xl font-bold text-white mb-4"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
+                          >
+                            Lifestyle & Premium
+                          </motion.h3>
+                          <motion.p
+                            className="text-yellow-400 font-semibold text-xl mb-6"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.7 }}
+                          >
+                            Exclusive access & premium experiences
+                          </motion.p>
+                          <motion.p
+                            className="text-white/90 leading-relaxed text-lg max-w-2xl mx-auto lg:mx-0"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
+                          >
+                            Premium credit lines via partners, wealth products, and lifestyle benefits. Your journey culminates in exclusive access to the highest-end financial and lifestyle products, creating a truly premium experience.
+                          </motion.p>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <p className="text-white/80 leading-relaxed">
-                    Premium credit lines via partners, wealth products, and lifestyle benefits. Your journey culminates in exclusive access to the highest-end financial and lifestyle products.
-                  </p>
                 </div>
               </motion.div>
             </div>
 
-            {/* Timeline Callout */}
+            {/* Enhanced Timeline with SVG */}
             <motion.div
-              className="mt-16 text-center"
+              className="mt-20 text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
             >
-              <div className="bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 max-w-4xl mx-auto">
-                <h4 className="font-heading text-xl font-bold text-white mb-4">Development Timeline</h4>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-white/80">
-                  <div>
-                    <span className="text-cyan-400 font-medium">Near-term:</span> subscription financing, savings wallet, insurance access
-                  </div>
-                  <div>
-                    <span className="text-teal-400 font-medium">Next:</span> Earned wage access, EMI on card bills, curated partner marketplace
-                  </div>
-                  <div>
-                    <span className="text-yellow-400 font-medium">Later:</span> Premium credit lines via partners, wealth products, lifestyle benefits
+              <div className="bg-white/5 rounded-3xl p-8 md:p-12 border border-white/10 max-w-6xl mx-auto backdrop-blur-sm">
+                <motion.h4
+                  className="font-heading text-2xl md:text-3xl font-bold text-white mb-12"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+                >
+                  Development Timeline
+                </motion.h4>
+
+                {/* Timeline Container */}
+                <div className="relative">
+                  {/* Enhanced SVG Timeline Line */}
+                  <svg className="absolute left-1/2 transform -translate-x-1/2 w-3 h-full" viewBox="0 0 12 600">
+                    {/* Main Timeline Line */}
+                    <motion.line
+                      x1="6" y1="40" x2="6" y2="560"
+                      stroke="url(#timelineGradient)"
+                      strokeWidth="8"
+                      strokeLinecap="round"
+                      initial={{ pathLength: 0 }}
+                      whileInView={{ pathLength: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 2.5, ease: "easeOut", delay: 0.8 }}
+                    />
+
+                    {/* Connection Points - Small circles at each phase */}
+                    <motion.circle
+                      cx="6" cy="120"
+                      r="4"
+                      fill="url(#timelineGradient)"
+                      initial={{ scale: 0, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, ease: "easeOut", delay: 1.5 }}
+                    />
+                    <motion.circle
+                      cx="6" cy="300"
+                      r="4"
+                      fill="url(#timelineGradient)"
+                      initial={{ scale: 0, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, ease: "easeOut", delay: 2.0 }}
+                    />
+                    <motion.circle
+                      cx="6" cy="480"
+                      r="4"
+                      fill="url(#timelineGradient)"
+                      initial={{ scale: 0, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, ease: "easeOut", delay: 2.5 }}
+                    />
+
+                    <defs>
+                      <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stopColor="#06b6d4" stopOpacity="1" />
+                        <stop offset="25%" stopColor="#06b6d4" stopOpacity="1" />
+                        <stop offset="50%" stopColor="#14b8a6" stopOpacity="1" />
+                        <stop offset="75%" stopColor="#14b8a6" stopOpacity="1" />
+                        <stop offset="100%" stopColor="#eab308" stopOpacity="1" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+
+                  {/* Timeline Items */}
+                  <div className="space-y-16 relative z-10">
+                    {/* Near-term */}
+                    <motion.div
+                      className="relative flex items-center"
+                      initial={{ opacity: 0, x: -50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, ease: "easeOut", delay: 1.0 }}
+                    >
+                      <div className="flex-1 text-right pr-8">
+                        <h5 className="text-cyan-400 font-semibold text-lg mb-2">Near-term</h5>
+                        <p className="text-white/80 text-sm leading-relaxed">
+                          Subscription financing, savings wallet, insurance access
+                        </p>
+                      </div>
+
+                      {/* Timeline Node */}
+                      <div className="relative">
+                        {/* Vertical Connection Line to Main Timeline */}
+                        <div className="absolute left-1/2 top-1/2 w-1 h-16 bg-gradient-to-b from-cyan-400/80 to-transparent transform -translate-x-1/2 -translate-y-full"></div>
+
+                        <motion.div
+                          className="w-8 h-8 bg-cyan-400 rounded-full shadow-lg shadow-cyan-400/30 relative z-10"
+                          initial={{ scale: 0 }}
+                          whileInView={{ scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.6, ease: "easeOut", delay: 1.2 }}
+                        />
+                        <motion.div
+                          className="absolute inset-0 w-8 h-8 bg-cyan-400 rounded-full animate-ping opacity-20"
+                          initial={{ scale: 0 }}
+                          whileInView={{ scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.6, ease: "easeOut", delay: 1.4 }}
+                        />
+                      </div>
+
+                      <div className="flex-1 pl-8">
+                        <div className="w-16 h-16 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-2xl flex items-center justify-center">
+                          <motion.div
+                            initial={{ rotate: -180, scale: 0 }}
+                            whileInView={{ rotate: 0, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 1.6 }}
+                          >
+                            <svg className="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                            </svg>
+                          </motion.div>
+                        </div>
+                      </div>
+                    </motion.div>
+
+                    {/* Next */}
+                    <motion.div
+                      className="relative flex items-center"
+                      initial={{ opacity: 0, x: 50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, ease: "easeOut", delay: 1.2 }}
+                    >
+                      <div className="flex-1 text-right pr-8">
+                        <h5 className="text-teal-400 font-semibold text-lg mb-2">Next</h5>
+                        <p className="text-white/80 text-sm leading-relaxed">
+                          Earned wage access, EMI on card bills, curated partner marketplace
+                        </p>
+                      </div>
+
+                      {/* Timeline Node */}
+                      <div className="relative">
+                        {/* Vertical Connection Line to Main Timeline */}
+                        <div className="absolute left-1/2 top-1/2 w-1 h-24 bg-gradient-to-b from-teal-400/80 to-transparent transform -translate-x-1/2 -translate-y-full"></div>
+
+                        <motion.div
+                          className="w-8 h-8 bg-teal-400 rounded-full shadow-lg shadow-teal-400/30 relative z-10"
+                          initial={{ scale: 0 }}
+                          whileInView={{ scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.6, ease: "easeOut", delay: 2.0 }}
+                        />
+                        <motion.div
+                          className="absolute inset-0 w-8 h-8 bg-teal-400 rounded-full animate-ping opacity-20"
+                          initial={{ scale: 0 }}
+                          whileInView={{ scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.6, ease: "easeOut", delay: 2.2 }}
+                        />
+                      </div>
+
+                      <div className="flex-1 pl-8">
+                        <div className="w-16 h-16 bg-gradient-to-br from-teal-400/20 to-green-400/20 rounded-2xl flex items-center justify-center">
+                          <motion.div
+                            initial={{ rotate: 180, scale: 0 }}
+                            whileInView={{ rotate: 0, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 1.8 }}
+                          >
+                            <svg className="w-8 h-8 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                          </motion.div>
+                        </div>
+                      </div>
+                    </motion.div>
+
+                    {/* Later */}
+                    <motion.div
+                      className="relative flex items-center"
+                      initial={{ opacity: 0, x: -50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, ease: "easeOut", delay: 1.4 }}
+                    >
+                      <div className="flex-1 text-right pr-8">
+                        <h5 className="text-yellow-400 font-semibold text-lg mb-2">Later</h5>
+                        <p className="text-white/80 text-sm leading-relaxed">
+                          Premium credit lines via partners, wealth products, lifestyle benefits
+                        </p>
+                      </div>
+
+                      {/* Timeline Node */}
+                      <div className="relative">
+                        {/* Vertical Connection Line to Main Timeline */}
+                        <div className="absolute left-1/2 top-1/2 w-1 h-24 bg-gradient-to-b from-yellow-400/80 to-transparent transform -translate-x-1/2 -translate-y-full"></div>
+
+                        <motion.div
+                          className="w-8 h-8 bg-yellow-400 rounded-full shadow-lg shadow-yellow-400/30 relative z-10"
+                          initial={{ scale: 0 }}
+                          whileInView={{ scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.6, ease: "easeOut", delay: 2.4 }}
+                        />
+                        <motion.div
+                          className="absolute inset-0 w-8 h-8 bg-yellow-400 rounded-full animate-ping opacity-20"
+                          initial={{ scale: 0 }}
+                          whileInView={{ scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.6, ease: "easeOut", delay: 2.6 }}
+                        />
+                      </div>
+
+                      <div className="flex-1 pl-8">
+                        <div className="w-16 h-16 bg-gradient-to-br from-yellow-400/20 to-orange-400/20 rounded-2xl flex items-center justify-center">
+                          <motion.div
+                            initial={{ rotate: -180, scale: 0 }}
+                            whileInView={{ rotate: 0, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 2.8 }}
+                          >
+                            <svg className="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                            </svg>
+                          </motion.div>
+                        </div>
+                      </div>
+                    </motion.div>
                   </div>
                 </div>
               </div>
@@ -663,44 +1033,7 @@ export function Home() {
               credit margin opportunities—creating sustainable growth while rewarding disciplined members.
             </motion.p>
 
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-              variants={containerVariants}
-            >
-              <motion.div
-                variants={buttonVariants}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                whileHover={{ scale: 1.05, transition: { duration: 0.2, ease: "easeOut" } }}
-              >
-                <Button
-                  variant="outline"
-                  className="border-white/20 text-white hover:bg-white/10"
-                  asChild
-                >
-                  <a href="/investor-one-pager.pdf" download>
-                    <Download className="mr-2" size={20} />
-                    Investor One-Pager (PDF)
-                  </a>
-                </Button>
-              </motion.div>
 
-              <motion.div
-                variants={buttonVariants}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                whileHover={{ scale: 1.05, transition: { duration: 0.2, ease: "easeOut" } }}
-              >
-                <Button
-                  variant="outline"
-                  className="border-white/20 text-white hover:bg-white/10"
-                  asChild
-                >
-                  <a href="/media-kit.zip" download>
-                    <Download className="mr-2" size={20} />
-                    Media Kit (ZIP)
-                  </a>
-                </Button>
-              </motion.div>
-            </motion.div>
           </motion.div>
         </div>
       </motion.section>

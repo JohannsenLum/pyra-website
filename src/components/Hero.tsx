@@ -1,6 +1,5 @@
 import { ArrowRight, Shield, TrendingUp, Users, Play, Pause } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useInView } from '@/hooks/useInView';
 import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
@@ -9,7 +8,6 @@ interface HeroProps {
 }
 
 export function Hero({ onOpenWaitlist }: HeroProps) {
-  const [heroRef] = useInView();
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -33,7 +31,6 @@ export function Hero({ onOpenWaitlist }: HeroProps) {
 
   return (
     <section
-      ref={heroRef}
       className="relative min-h-[95vh] flex items-center justify-center overflow-hidden"
       style={{ backgroundColor: '#0A0A0A' }}
     >
@@ -109,8 +106,8 @@ export function Hero({ onOpenWaitlist }: HeroProps) {
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
-                    duration: 0.6,
-                    delay: 0.3 + index * 0.1,
+                    duration: 0.8,
+                    delay: 0.2 + index * 0.08,
                     ease: "easeOut"
                   }}
                   className="inline-block"
@@ -126,8 +123,8 @@ export function Hero({ onOpenWaitlist }: HeroProps) {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
-                    duration: 0.5,
-                    delay: 1.2 + index * 0.03,
+                    duration: 0.7,
+                    delay: 1.0 + index * 0.04,
                     ease: "easeOut"
                   }}
                   className="inline-block"
