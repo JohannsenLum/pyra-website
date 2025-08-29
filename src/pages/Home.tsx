@@ -3,6 +3,7 @@ import { Hero } from '@/components/Hero';
 import { FeatureCard } from '@/components/FeatureCard';
 import { WaitlistModal } from '@/components/WaitlistModal';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import {
   ArrowRight,
   TrendingUp,
@@ -64,75 +65,192 @@ export function Home() {
     },
   ];
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const heroVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const buttonVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1 },
+    hover: { scale: 1.05 }
+  };
+
+  const badgeVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1 }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0 }
+  };
+
+  const featureVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
     <div>
       <Hero onOpenWaitlist={onOpenWaitlist} />
 
       {/* Mission & Introduction Section */}
-      <section className="py-16" style={{ backgroundColor: '#141414' }}>
+      <motion.section
+        className="py-16"
+        style={{ backgroundColor: '#141414' }}
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+      >
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="max-w-4xl mx-auto">
-            <p className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto leading-relaxed">
+          <motion.div
+            className="max-w-4xl mx-auto"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.p
+              className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto leading-relaxed"
+              variants={itemVariants}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               Transform your credit behavior into a valuable asset. Build an ecosystem where financial discipline is rewarded,
               trust is monetized, and you ascend aspirational tiers of finance and lifestyle.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button
-                onClick={onOpenWaitlist}
-                size="lg"
-                className="btn-premium font-semibold px-8 py-3 text-lg"
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+              variants={containerVariants}
+            >
+              <motion.div
+                variants={buttonVariants}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                whileHover={{ scale: 1.05, transition: { duration: 0.2, ease: "easeOut" } }}
               >
-                Discover the Future of Finance
-                <ArrowRight className="ml-2" size={20} />
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-white/20 text-white hover:bg-white/10 px-8 py-3 text-lg"
-                onClick={() => document.getElementById('clubs')?.scrollIntoView({ behavior: 'smooth' })}
+                <Button
+                  onClick={onOpenWaitlist}
+                  size="lg"
+                  className="btn-premium font-semibold px-8 py-3 text-lg"
+                >
+                  Discover the Future of Finance
+                  <ArrowRight className="ml-2" size={20} />
+                </Button>
+              </motion.div>
+              <motion.div
+                variants={buttonVariants}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                whileHover={{ scale: 1.05, transition: { duration: 0.2, ease: "easeOut" } }}
               >
-                Explore Pyra Clubs
-              </Button>
-            </div>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-white/20 text-white hover:bg-white/10 px-8 py-3 text-lg"
+                  onClick={() => document.getElementById('clubs')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Explore Pyra Clubs
+                </Button>
+              </motion.div>
+            </motion.div>
 
-            <div className="flex flex-wrap justify-center gap-4">
+            <motion.div
+              className="flex flex-wrap justify-center gap-4"
+              variants={containerVariants}
+            >
               {[
                 { icon: TrendingUp, text: 'Financial discipline rewarded' },
                 { icon: Shield, text: 'Trust monetized' },
                 { icon: Users, text: 'Ascend through tiers' },
                 { icon: Shield, text: 'Privacy first' },
               ].map((badge, i) => (
-                <div
+                <motion.div
                   key={i}
                   className="bg-premium-glass rounded-full px-4 py-2 flex items-center space-x-2"
+                  variants={badgeVariants}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
                 >
                   <badge.icon size={16} className="text-white" />
                   <span className="text-sm text-white">{badge.text}</span>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Pyra Clubs & Features Section */}
-      <section id="clubs" className="py-24" style={{ backgroundColor: '#0F0F0F' }}>
+      <motion.section
+        id="clubs"
+        className="py-24"
+        style={{ backgroundColor: '#0F0F0F' }}
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+      >
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-4xl font-bold text-white mb-4">
+          <motion.div
+            className="text-center mb-16"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.h2
+              className="font-heading text-4xl font-bold text-white mb-4"
+              variants={itemVariants}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               The Pyra Clubs: A Tiered Ecosystem of <span className="text-yellow-400">Trust</span>
-            </h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
+            </motion.h2>
+            <motion.p
+              className="text-xl text-white/80 max-w-3xl mx-auto mb-8"
+              variants={itemVariants}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               Each club represents a level of financial discipline and trust, unlocking progressively more exclusive benefits.
               From building foundational habits to accessing premium financial tools, Pyra guides your journey to financial excellence.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           {/* Club Overview Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+          <motion.div
+            className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {/* Prime Club */}
-            <div className="bg-premium-glass rounded-2xl p-8 border-premium">
+            <motion.div
+              className="bg-premium-glass rounded-2xl p-8 border-premium"
+              variants={cardVariants}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <div className="text-center mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-gray-300 rounded-full flex items-center justify-center mb-4 mx-auto">
                   <Star className="text-white" size={32} />
@@ -143,10 +261,14 @@ export function Home() {
               <p className="text-white/80 text-center mb-6">
                 The core tier for established users with advanced financial tracking and credit management tools.
               </p>
-            </div>
+            </motion.div>
 
             {/* Spark Club */}
-            <div className="bg-premium-glass rounded-2xl p-8 border-premium">
+            <motion.div
+              className="bg-premium-glass rounded-2xl p-8 border-premium"
+              variants={cardVariants}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <div className="text-center mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-teal-400 to-cyan-400 rounded-full flex items-center justify-center mb-4 mx-auto">
                   <Zap className="text-white" size={32} />
@@ -157,10 +279,14 @@ export function Home() {
               <p className="text-white/80 text-center mb-6">
                 The launchpad for building the foundation of financial discipline and healthy spending habits.
               </p>
-            </div>
+            </motion.div>
 
             {/* Nova Club */}
-            <div className="bg-premium-glass rounded-2xl p-8 border-premium">
+            <motion.div
+              className="bg-premium-glass rounded-2xl p-8 border-premium"
+              variants={cardVariants}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <div className="text-center mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full flex items-center justify-center mb-4 mx-auto">
                   <Crown className="text-white" size={32} />
@@ -171,149 +297,264 @@ export function Home() {
               <p className="text-white/80 text-center mb-6">
                 Earned through discipline, granting access to the highest-end financial and lifestyle products.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Features Section */}
-          <div className="text-center mb-16">
-            <h3 className="font-heading text-3xl font-bold text-white mb-8">
+          <motion.div
+            className="text-center mb-16"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.h3
+              className="font-heading text-3xl font-bold text-white mb-8"
+              variants={itemVariants}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               Core Features & Functionality
-            </h3>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto mb-12">
+            </motion.h3>
+            <motion.p
+              className="text-xl text-white/80 max-w-3xl mx-auto mb-12"
+              variants={itemVariants}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               Our comprehensive suite of tools is designed to build financial discipline and unlock exclusive benefits.
               Whether you're starting your financial journey or managing complex portfolios, Pyra provides the insights and tools you need.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {allFeatures.map((feature, index) => (
-              <FeatureCard
+              <motion.div
                 key={feature.title}
-                icon={feature.icon}
-                title={feature.title}
-                description={feature.description}
-                index={index}
-              />
+                variants={featureVariants}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+              >
+                <FeatureCard
+                  icon={feature.icon}
+                  title={feature.title}
+                  description={feature.description}
+                  index={index}
+                />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Pyra Super-App Vision Section */}
-      <section className="py-24" style={{ backgroundColor: '#141414' }}>
+      <motion.section
+        className="py-24"
+        style={{ backgroundColor: '#141414' }}
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+      >
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-heading text-4xl font-bold text-white mb-8">
-            The Pyra Super-App Vision
-          </h2>
+          <motion.div
+            className="max-w-5xl mx-auto"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.h2
+              className="font-heading text-4xl font-bold text-white mb-8"
+              variants={itemVariants}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              The Pyra Super-App Vision
+            </motion.h2>
 
-          <div className="max-w-5xl mx-auto">
-            <p className="text-lg text-white/80 mb-12 leading-relaxed max-w-3xl mx-auto">
+            <motion.p
+              className="text-lg text-white/80 mb-12 leading-relaxed max-w-3xl mx-auto"
+              variants={itemVariants}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               From Credit → Savings → Investments → Lifestyle, Pyra monetizes trust and rewards responsibility.
               Your financial discipline becomes your most valuable asset, unlocking a world of possibilities.
-            </p>
+            </motion.p>
 
             {/* Vision Architecture */}
-            <div className="relative mb-16">
+            <motion.div
+              className="relative mb-16"
+              variants={containerVariants}
+            >
               <div className="flex flex-col items-center space-y-6">
                 {/* Lifestyle Tier - Top */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 w-80 text-center border border-white/20">
+                <motion.div
+                  className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 w-80 text-center border border-white/20"
+                  variants={itemVariants}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                >
                   <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Crown className="text-black" size={24} />
                   </div>
                   <h3 className="font-heading text-xl font-bold text-white mb-2">Lifestyle</h3>
                   <p className="text-white/70 text-sm">Premium experiences & exclusive access</p>
-                </div>
+                </motion.div>
 
                 {/* Connection Line */}
-                <div className="w-px h-8 bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
+                <motion.div
+                  className="w-px h-8 bg-gradient-to-b from-transparent via-white/30 to-transparent"
+                  variants={itemVariants}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                ></motion.div>
 
                 {/* Investments Tier */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 w-96 text-center border border-white/20">
+                <motion.div
+                  className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 w-96 text-center border border-white/20"
+                  variants={itemVariants}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                >
                   <div className="w-12 h-12 bg-teal-400 rounded-full flex items-center justify-center mx-auto mb-4">
                     <BarChart3 className="text-white" size={24} />
                   </div>
                   <h3 className="font-heading text-xl font-bold text-white mb-2">Investments</h3>
                   <p className="text-white/70 text-sm">Wealth building & portfolio management</p>
-                </div>
+                </motion.div>
 
                 {/* Connection Line */}
-                <div className="w-px h-8 bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
+                <motion.div
+                  className="w-px h-8 bg-gradient-to-b from-transparent via-white/30 to-transparent"
+                  variants={itemVariants}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                ></motion.div>
 
                 {/* Savings Tier */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 w-[28rem] text-center border border-white/20">
+                <motion.div
+                  className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 w-[28rem] text-center border border-white/20"
+                  variants={itemVariants}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                >
                   <div className="w-12 h-12 bg-cyan-400 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Wallet className="text-white" size={24} />
                   </div>
                   <h3 className="font-heading text-xl font-bold text-white mb-2">Savings</h3>
                   <p className="text-white/70 text-sm">Smart saving & financial goals</p>
-                </div>
+                </motion.div>
 
                 {/* Connection Line */}
-                <div className="w-px h-8 bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
+                <motion.div
+                  className="w-px h-8 bg-gradient-to-b from-transparent via-white/30 to-transparent"
+                  variants={itemVariants}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                ></motion.div>
 
                 {/* Credit Foundation - Base */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 w-full max-w-lg text-center border border-white/20">
+                <motion.div
+                  className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 w-full max-w-lg text-center border border-white/20"
+                  variants={itemVariants}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                >
                   <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Target className="text-white" size={24} />
                   </div>
                   <h3 className="font-heading text-xl font-bold text-white mb-2">Credit</h3>
                   <p className="text-white/70 text-sm">Building trust through discipline</p>
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
 
-            <Button
-              onClick={onOpenWaitlist}
-              size="lg"
-              className="btn-premium font-semibold px-8 py-3 text-lg"
-            >
-              Join the Future
-              <ArrowRight className="ml-2" size={20} />
-            </Button>
-          </div>
+            <motion.div variants={buttonVariants}>
+              <Button
+                onClick={onOpenWaitlist}
+                size="lg"
+                className="btn-premium font-semibold px-8 py-3 text-lg"
+              >
+                Join the Future
+                <ArrowRight className="ml-2" size={20} />
+              </Button>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Investor Section */}
-      <section className="py-24" style={{ backgroundColor: '#0F0F0F' }}>
+      <motion.section
+        className="py-24"
+        style={{ backgroundColor: '#0F0F0F' }}
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+      >
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-heading text-3xl font-bold text-white mb-8">
+          <motion.div
+            className="max-w-4xl mx-auto text-center"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.h2
+              className="font-heading text-3xl font-bold text-white mb-8"
+              variants={itemVariants}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               Building the future of financial discipline
-            </h2>
+            </motion.h2>
 
-            <p className="text-lg text-white/80 mb-12 leading-relaxed">
+            <motion.p
+              className="text-lg text-white/80 mb-12 leading-relaxed"
+              variants={itemVariants}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               Pyra transforms financial responsibility into aspiration through behavior-first status tiers.
               Our revenue model combines partner revenue sharing, premium Nova subscriptions, and future
               credit margin opportunities—creating sustainable growth while rewarding disciplined members.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                variant="outline"
-                className="border-white/20 text-white hover:bg-white/10"
-                asChild
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              variants={containerVariants}
+            >
+              <motion.div
+                variants={buttonVariants}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                whileHover={{ scale: 1.05, transition: { duration: 0.2, ease: "easeOut" } }}
               >
-                <a href="/investor-one-pager.pdf" download>
-                  <Download className="mr-2" size={20} />
-                  Investor One-Pager (PDF)
-                </a>
-              </Button>
+                <Button
+                  variant="outline"
+                  className="border-white/20 text-white hover:bg-white/10"
+                  asChild
+                >
+                  <a href="/investor-one-pager.pdf" download>
+                    <Download className="mr-2" size={20} />
+                    Investor One-Pager (PDF)
+                  </a>
+                </Button>
+              </motion.div>
 
-              <Button
-                variant="outline"
-                className="border-white/20 text-white hover:bg-white/10"
-                asChild
+              <motion.div
+                variants={buttonVariants}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                whileHover={{ scale: 1.05, transition: { duration: 0.2, ease: "easeOut" } }}
               >
-                <a href="/media-kit.zip" download>
-                  <Download className="mr-2" size={20} />
-                  Media Kit (ZIP)
-                </a>
-              </Button>
-            </div>
-          </div>
+                <Button
+                  variant="outline"
+                  className="border-white/20 text-white hover:bg-white/10"
+                  asChild
+                >
+                  <a href="/media-kit.zip" download>
+                    <Download className="mr-2" size={20} />
+                    Media Kit (ZIP)
+                  </a>
+                </Button>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Waitlist Modal */}
       <WaitlistModal isOpen={isWaitlistOpen} onClose={onCloseWaitlist} />
