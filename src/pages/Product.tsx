@@ -1,6 +1,7 @@
 import { CreditCard, Shield, TrendingUp, Eye, Clock, AlertTriangle, Star, Zap, Crown } from 'lucide-react';
 import { DIChart } from '@/components/DIChart';
 import { motion } from 'framer-motion';
+import { ProductHeroBackground } from '@/components/ProductHeroBackground';
 
 export default function Product() {
   // Animation variants
@@ -44,13 +45,16 @@ export default function Product() {
     <div className="pt-16">
       {/* Hero Section */}
       <motion.section
-        className="py-24 bg-gradient-deep"
+        className="py-24 bg-gradient-deep relative overflow-hidden"
         variants={heroVariants}
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Animated Background */}
+        <ProductHeroBackground />
+
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
             variants={containerVariants}
             initial="hidden"

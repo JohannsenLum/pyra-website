@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ClubBadge } from '@/components/ClubBadge';
 import { TrendingUp, ArrowUp, RotateCcw, Star, Zap, Crown } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { ClubsHeroBackground } from '@/components/ClubsHeroBackground';
 
 export default function Clubs() {
   const [activeClub, setActiveClub] = useState<'spark' | 'prime' | 'nova'>('prime');
@@ -86,13 +87,16 @@ export default function Clubs() {
     <div className="pt-16">
       {/* Hero */}
       <motion.section
-        className="py-24 bg-gradient-deep"
+        className="py-24 bg-gradient-deep relative overflow-hidden"
         variants={heroVariants}
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Animated Background */}
+        <ClubsHeroBackground />
+
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
             variants={containerVariants}
             initial="hidden"

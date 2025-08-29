@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { motion } from 'framer-motion';
+import { ContactHeroBackground } from '@/components/ContactHeroBackground';
 
 export default function Contact() {
   // Animation variants
@@ -42,13 +43,16 @@ export default function Contact() {
     <div className="pt-16">
       {/* Hero */}
       <motion.section
-        className="py-24 bg-gradient-deep"
+        className="py-24 bg-gradient-deep relative overflow-hidden"
         variants={heroVariants}
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Animated Background */}
+        <ContactHeroBackground />
+
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
             variants={containerVariants}
             initial="hidden"

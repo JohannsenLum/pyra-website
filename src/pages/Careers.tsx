@@ -1,6 +1,7 @@
 import { Code, BarChart3, Palette, Handshake, ArrowRight, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import { CareersHeroBackground } from '@/components/CareersHeroBackground';
 
 export default function Careers() {
   const roles = [
@@ -76,13 +77,16 @@ export default function Careers() {
     <div className="pt-16">
       {/* Hero */}
       <motion.section
-        className="py-24 bg-gradient-deep"
+        className="py-24 bg-gradient-deep relative overflow-hidden"
         variants={heroVariants}
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Animated Background */}
+        <CareersHeroBackground />
+
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
             variants={containerVariants}
             initial="hidden"
