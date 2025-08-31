@@ -26,8 +26,8 @@ export function Hero({ onOpenWaitlist }: HeroProps) {
   };
 
   // Split text into characters for animation
-  const titleLetters = "Pyra".split("");
-  const subtitleLetters = "Pay every card in one place.".split("");
+  const titleLetters = "PYRA".split("");
+  const subtitleLetters = "Beyond Payments.".split("");
 
   return (
     <section

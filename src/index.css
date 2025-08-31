@@ -21,8 +21,8 @@
     /* #00C1C7 - professional teal for Spark */
     --ink: 0 0% 100%;
     /* #FFFFFF - pure white text */
-    --muted: 0 0% 90%;
-    /* #E5E5E5 - light gray for muted text */
+    --muted: 0 0% 100%;
+    /* #FFFFFF - white text for better visibility */
 
     /* Base System (Premium Dark-First) */
     --background: var(--bg);
@@ -41,7 +41,8 @@
     --secondary-foreground: var(--ink);
 
     --muted: var(--navy-700);
-    --muted-foreground: var(--muted);
+    --muted-foreground: 0 0% 100%;
+    /* #FFFFFF - white text for better visibility */
 
     --accent: var(--teal);
     --accent-foreground: var(--bg);

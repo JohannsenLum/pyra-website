@@ -1,4 +1,4 @@
-import { Linkedin, ArrowRight } from 'lucide-react';
+import { Linkedin, ArrowRight, Users, Target, Shield, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { AboutHeroBackground } from '@/components/AboutHeroBackground';
@@ -6,29 +6,23 @@ import { AboutHeroBackground } from '@/components/AboutHeroBackground';
 export default function About() {
   const founders = [
     {
-      name: 'Sanjeev',
-      role: 'CEO',
+      name: 'sanjeev',
+      role: 'Founder & CEO',
       bio: 'Product & strategy leader with fintech partnerships expertise. Passionate about redefining credit and financial habits in Southeast Asia.',
-      linkedin: '#'
+      linkedin: 'https://www.linkedin.com/in/sanjeev2710'
     },
     {
-      name: 'Flo',
-      role: 'CFO',
+      name: 'flo',
+      role: 'CFO & COO',
       bio: 'Capital strategy and unit economics specialist with compliance rigor. Drives sustainable growth across Southeast Asia.',
-      linkedin: '#'
+      linkedin: 'http://www.linkedin.com/in/florian-gache'
     },
     {
-      name: 'Basil',
-      role: 'COO',
-      bio: 'Operations and partner delivery expert with deep member support experience. Builds reliable financial rails.',
-      linkedin: '#'
-    },
-    {
-      name: 'Johannsen',
+      name: 'basil',
       role: 'CTO',
-      bio: 'Platform architecture and data privacy innovator. Creates secure-by-design financial infrastructure and trust models.',
-      linkedin: '#'
-    }
+      bio: 'Operations and partner delivery expert with deep member support experience. Builds reliable financial rails.',
+      linkedin: 'https://www.linkedin.com/in/basil-boh-81933b18b/'
+    },
   ];
 
   // Animation variants
@@ -68,7 +62,8 @@ export default function About() {
     <div className="pt-16">
       {/* Hero */}
       <motion.section
-        className="py-24 bg-gradient-deep relative overflow-hidden"
+        className="py-32 relative overflow-hidden"
+        style={{ backgroundColor: '#0A0A0A' }}
         variants={heroVariants}
         initial="hidden"
         animate="visible"
@@ -84,13 +79,13 @@ export default function About() {
             animate="visible"
           >
             <motion.h1
-              className="font-heading text-5xl font-bold text-pyra-ink mb-6"
+              className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8"
               variants={itemVariants}
             >
               About <span className="text-gradient">Pyra</span>
             </motion.h1>
             <motion.p
-              className="text-xl text-pyra-muted max-w-3xl mx-auto"
+              className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed"
               variants={itemVariants}
             >
               Redefining Credit and Financial Habits in Southeast Asia
@@ -101,17 +96,23 @@ export default function About() {
 
       {/* Founding Story */}
       <motion.section
-        className="py-24 bg-pyra-bg"
+        className="py-32 relative overflow-hidden"
+        style={{ backgroundColor: '#0F0F0F' }}
         variants={itemVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Premium Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-900/20 via-transparent to-cyan-900/20" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-amber-400/10 to-yellow-400/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-to-br from-cyan-400/10 to-blue-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }} />
+
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto">
             <motion.h2
-              className="font-heading text-4xl font-bold text-pyra-ink mb-8 text-center"
+              className="font-heading text-4xl md:text-5xl font-bold text-white mb-8 text-center"
               variants={itemVariants}
               initial="hidden"
               whileInView="visible"
@@ -122,14 +123,14 @@ export default function About() {
             </motion.h2>
 
             <motion.div
-              className="bg-glass rounded-2xl p-8 lg:p-12"
+              className="bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-8 lg:p-12 border border-white/20"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
             >
               <motion.p
-                className="text-lg text-pyra-muted leading-relaxed mb-6"
+                className="text-lg text-white/90 leading-relaxed mb-6"
                 variants={itemVariants}
               >
                 Pyra was founded to build an ecosystem where financial discipline is rewarded, trust is monetized,
@@ -139,7 +140,7 @@ export default function About() {
               </motion.p>
 
               <motion.p
-                className="text-lg text-pyra-muted leading-relaxed mb-6"
+                className="text-lg text-white/90 leading-relaxed mb-6"
                 variants={itemVariants}
               >
                 So we built a behavior-first ecosystem where your habits unlock access. Where building
@@ -148,7 +149,7 @@ export default function About() {
               </motion.p>
 
               <motion.p
-                className="text-lg text-pyra-muted leading-relaxed"
+                className="text-lg text-white/90 leading-relaxed"
                 variants={itemVariants}
               >
                 Starting in Southeast Asia, we're creating the financial super-app that rewards what
@@ -161,14 +162,20 @@ export default function About() {
 
       {/* Mission */}
       <motion.section
-        className="py-24 bg-navy-700"
+        className="py-32 relative overflow-hidden"
+        style={{ backgroundColor: '#111315' }}
         variants={itemVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Premium Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/20 via-transparent to-cyan-900/20" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-indigo-400/10 to-purple-400/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-to-br from-cyan-400/10 to-blue-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }} />
+
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             className="text-center mb-16"
             variants={containerVariants}
@@ -177,7 +184,7 @@ export default function About() {
             viewport={{ once: true }}
           >
             <motion.h2
-              className="font-heading text-4xl font-bold text-pyra-ink mb-4"
+              className="font-heading text-4xl md:text-5xl font-bold text-white mb-4"
               variants={itemVariants}
             >
               Mission & Vision
@@ -192,13 +199,13 @@ export default function About() {
             viewport={{ once: true }}
           >
             <motion.div
-              className="bg-glass rounded-2xl p-8"
+              className="bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:border-cyan-400/40 transition-all duration-500 hover:scale-105"
               variants={itemVariants}
             >
-              <h3 className="font-heading text-2xl font-semibold text-pyra-ink mb-6">
+              <h3 className="font-heading text-2xl font-semibold text-white mb-6">
                 Our Vision
               </h3>
-              <p className="text-pyra-muted leading-relaxed">
+              <p className="text-white/90 leading-relaxed">
                 A financial super-app for Southeast Asia that rewards good habits with real access.
                 Where discipline becomes the new currency and financial responsibility opens doors
                 to premium experiences and opportunities.
@@ -206,13 +213,13 @@ export default function About() {
             </motion.div>
 
             <motion.div
-              className="bg-glass rounded-2xl p-8"
+              className="bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:border-emerald-400/40 transition-all duration-500 hover:scale-105"
               variants={itemVariants}
             >
-              <h3 className="font-heading text-2xl font-semibold text-pyra-ink mb-6">
+              <h3 className="font-heading text-2xl font-semibold text-white mb-6">
                 Our Mission
               </h3>
-              <p className="text-pyra-muted leading-relaxed">
+              <p className="text-white/90 leading-relaxed">
                 To build an ecosystem where financial discipline is rewarded, trust is monetized,
                 and users ascend aspirational tiers of finance and lifestyle. We transform credit
                 behavior into a valuable asset.
@@ -220,37 +227,7 @@ export default function About() {
             </motion.div>
           </motion.div>
 
-          <motion.div
-            className="mt-12 bg-glass rounded-2xl p-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <motion.h3
-              className="font-heading text-2xl font-semibold text-pyra-ink mb-6 text-center"
-              variants={itemVariants}
-            >
-              Year-1 Goals
-            </motion.h3>
-            <motion.div
-              className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center"
-              variants={containerVariants}
-            >
-              <motion.div variants={itemVariants}>
-                <div className="text-3xl font-bold text-gradient mb-2">100k</div>
-                <p className="text-pyra-muted">Disciplined members in first market</p>
-              </motion.div>
-              <motion.div variants={itemVariants}>
-                <div className="text-3xl font-bold text-gradient mb-2">50%</div>
-                <p className="text-pyra-muted">Autopay adoption among active bill payers</p>
-              </motion.div>
-              <motion.div variants={itemVariants}>
-                <div className="text-3xl font-bold text-gradient mb-2">Launch</div>
-                <p className="text-pyra-muted">Pyra Clubs with unified financial management</p>
-              </motion.div>
-            </motion.div>
-          </motion.div>
+
 
           <motion.div
             className="mt-12 text-center"
@@ -260,7 +237,7 @@ export default function About() {
             viewport={{ once: true }}
           >
             <motion.h4
-              className="font-heading text-xl font-semibold text-pyra-ink mb-4"
+              className="font-heading text-xl font-semibold text-white mb-4"
               variants={itemVariants}
             >
               Our Values
@@ -277,10 +254,10 @@ export default function About() {
               ].map((value, i) => (
                 <motion.div
                   key={i}
-                  className="bg-pyra-bg rounded-full px-6 py-3"
+                  className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:border-white/40 transition-all duration-300"
                   variants={itemVariants}
                 >
-                  <span className="text-pyra-muted">{value}</span>
+                  <span className="text-white/90">{value}</span>
                 </motion.div>
               ))}
             </motion.div>
@@ -290,14 +267,20 @@ export default function About() {
 
       {/* Founders */}
       <motion.section
-        className="py-24 bg-pyra-bg"
+        className="py-32 relative overflow-hidden"
+        style={{ backgroundColor: '#0A0A0A' }}
         variants={itemVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Premium Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/20 via-transparent to-teal-900/20" />
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-gradient-to-br from-emerald-400/10 to-green-400/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-gradient-to-br from-teal-400/10 to-cyan-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }} />
+
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             className="text-center mb-16"
             variants={containerVariants}
@@ -306,13 +289,13 @@ export default function About() {
             viewport={{ once: true }}
           >
             <motion.h2
-              className="font-heading text-4xl font-bold text-pyra-ink mb-4"
+              className="font-heading text-4xl md:text-5xl font-bold text-white mb-4"
               variants={itemVariants}
             >
               Meet the Founders
             </motion.h2>
             <motion.p
-              className="text-xl text-pyra-muted"
+              className="text-xl text-white/80"
               variants={itemVariants}
             >
               Building the future of financial discipline across Southeast Asia
@@ -320,7 +303,7 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -329,28 +312,32 @@ export default function About() {
             {founders.map((founder, index) => (
               <motion.div
                 key={founder.name}
-                className="bg-glass rounded-2xl p-6 text-center"
+                className="bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-6 text-center border border-white/20 hover:border-cyan-400/40 transition-all duration-500 hover:scale-105 group flex flex-col h-full"
                 variants={founderCardVariants}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                <div className="w-24 h-24 bg-accent-gradient rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-white text-2xl font-bold">
-                    {founder.name.charAt(0)}
-                  </span>
+                <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden group-hover:scale-110 transition-transform duration-300 shadow-2xl">
+                  <img
+                    src={`/${founder.name.toLowerCase()}.jpg`}
+                    alt={`${founder.name} - ${founder.role}`}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
-                <h3 className="font-heading text-xl font-semibold text-pyra-ink mb-1">
-                  {founder.name}
+                <h3 className="font-heading text-xl font-semibold text-white mb-1">
+                  {founder.name.charAt(0).toUpperCase() + founder.name.slice(1)}
                 </h3>
-                <p className="text-pyra-cyan font-medium mb-4">{founder.role}</p>
+                <p className="text-cyan-400 font-medium mb-4">{founder.role}</p>
 
-                <p className="text-sm text-pyra-muted leading-relaxed mb-4">
+                <p className="text-sm text-white/90 leading-relaxed mb-4 flex-grow">
                   {founder.bio}
                 </p>
 
                 <a
                   href={founder.linkedin}
-                  className="inline-flex items-center text-pyra-cyan hover:text-pyra-ink transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-cyan-400 hover:text-white transition-colors mt-auto"
                 >
                   <Linkedin size={16} className="mr-1" />
                   LinkedIn
@@ -359,41 +346,7 @@ export default function About() {
             ))}
           </motion.div>
 
-          <motion.div
-            className="mt-16 text-center"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <motion.div
-              className="bg-glass rounded-2xl p-8 max-w-2xl mx-auto"
-              variants={itemVariants}
-            >
-              <h3 className="font-heading text-2xl font-semibold text-pyra-ink mb-4">
-                Join Our Team
-              </h3>
-              <p className="text-pyra-muted mb-6">
-                We're looking for exceptional people who share our vision of making
-                financial discipline rewarding and trust monetizable.
-              </p>
-              <motion.div
-                variants={buttonVariants}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
-                <Button
-                  className="bg-accent-gradient btn-sheen font-medium"
-                  asChild
-                >
-                  <a href="/careers">
-                    View Open Roles
-                    <ArrowRight className="ml-2" size={16} />
-                  </a>
-                </Button>
-              </motion.div>
-            </motion.div>
-          </motion.div>
+
         </div>
       </motion.section>
     </div>

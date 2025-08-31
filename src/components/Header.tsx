@@ -4,17 +4,17 @@ import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-export default function Header() {
+interface HeaderProps {
+  onOpenWaitlist: () => void;
+}
+
+export default function Header({ onOpenWaitlist }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
   const navItems = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
-    { href: '/product', label: 'Product' },
-    { href: '/clubs', label: 'Clubs' },
-    { href: '/careers', label: 'Careers' },
-    { href: '/blog', label: 'Blog' },
     { href: '/contact', label: 'Contact' }
   ];
 
@@ -42,14 +42,15 @@ export default function Header() {
       animate="visible"
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+      <div className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center h-16">
+          {/* Logo - Left Side */}
           <motion.div
             variants={navItemVariants}
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.6, ease: "easeOut" }}
+            className="flex-shrink-0"
           >
             <Link to="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-br from-pyra-cyan to-pyra-indigo rounded-lg flex items-center justify-center">
@@ -59,9 +60,9 @@ export default function Header() {
             </Link>
           </motion.div>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Right Side */}
           <motion.nav
-            className="hidden md:flex items-center space-x-8"
+            className="hidden md:flex items-center space-x-8 ml-auto mr-4"
             variants={navItemVariants}
             initial="hidden"
             animate="visible"
@@ -72,8 +73,8 @@ export default function Header() {
                 key={item.href}
                 to={item.href}
                 className={`text-sm font-medium transition-colors ${location.pathname === item.href
-                    ? 'text-yellow-400'
-                    : 'text-white/80 hover:text-white'
+                  ? 'text-yellow-400'
+                  : 'text-white/80 hover:text-white'
                   }`}
               >
                 {item.label}
@@ -81,74 +82,73 @@ export default function Header() {
             ))}
           </motion.nav>
 
-          {/* CTA Button */}
+          {/* CTA Button - Right Side */}
           <motion.div
             variants={navItemVariants}
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="hidden md:block"
+            className="hidden md:block flex-shrink-0"
           >
             <Button
               className="btn-premium font-medium"
-              asChild
+              onClick={onOpenWaitlist}
             >
-              <Link to="/">
-                Join Waitlist
-              </Link>
+              Join Waitlist
             </Button>
           </motion.div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Right Side */}
           <motion.button
             variants={navItemVariants}
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="md:hidden p-2 text-white hover:text-yellow-400 transition-colors"
+            className="md:hidden p-2 text-white hover:text-yellow-400 transition-colors flex-shrink-0"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </motion.button>
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <motion.div
-            className="md:hidden border-t border-white/10"
-            variants={mobileMenuVariants}
-            initial="hidden"
-            animate="visible"
-            transition={{ duration: 0.3, ease: "easeOut" }}
-          >
-            <div className="py-4 space-y-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  to={item.href}
-                  className={`block px-4 py-2 text-sm font-medium transition-colors ${location.pathname === item.href
-                      ? 'text-yellow-400'
-                      : 'text-white/80 hover:text-white'
-                    }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <div className="px-4 pt-4">
-                <Button
-                  className="w-full btn-premium font-medium"
-                  asChild
-                >
-                  <Link to="/" onClick={() => setIsMenuOpen(false)}>
-                    Join Waitlist
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </motion.div>
-        )}
       </div>
+
+      {/* Mobile Menu - Outside Container for Full Width */}
+      {isMenuOpen && (
+        <motion.div
+          className="md:hidden border-t border-white/10 absolute inset-x-0 top-full bg-background/95 backdrop-blur-xl"
+          variants={mobileMenuVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 0.3, ease: "easeOut" }}
+        >
+          <div className="py-4 space-y-4">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                to={item.href}
+                className={`block px-4 py-2 text-sm font-medium transition-colors ${location.pathname === item.href
+                  ? 'text-yellow-400'
+                  : 'text-white/80 hover:text-white'
+                  }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <div className="px-4 pt-4">
+              <Button
+                className="w-full btn-premium font-medium"
+                onClick={() => {
+                  onOpenWaitlist();
+                  setIsMenuOpen(false);
+                }}
+              >
+                Join Waitlist
+              </Button>
+            </div>
+          </div>
+        </motion.div>
+      )}
     </motion.header>
   );
 }
