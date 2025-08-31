@@ -76,6 +76,10 @@ export default function Header({ onOpenWaitlist }: HeaderProps) {
                   ? 'text-yellow-400'
                   : 'text-white/80 hover:text-white'
                   }`}
+                onClick={() => {
+                  // Always scroll to top when clicking navigation
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
               >
                 {item.label}
               </Link>
@@ -130,7 +134,11 @@ export default function Header({ onOpenWaitlist }: HeaderProps) {
                   ? 'text-yellow-400'
                   : 'text-white/80 hover:text-white'
                   }`}
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  // Always scroll to top when clicking navigation
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
               >
                 {item.label}
               </Link>
