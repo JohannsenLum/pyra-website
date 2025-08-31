@@ -316,7 +316,7 @@ export function Home({ onOpenWaitlist }: HomeProps) {
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header */}
           <motion.div
-            className="text-center mb-8"
+            className="text-center mb-4 md:mb-12"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -341,18 +341,9 @@ export function Home({ onOpenWaitlist }: HomeProps) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
+
           >
             <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-              {/* Section Header */}
-              <motion.div
-                className="text-center mb-20"
-                variants={itemVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-              >
-              </motion.div>
-
               {/* Cards Container - Bottom-Aligned Grid */}
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-end max-w-9xl mx-auto">
                 {/* Spark Club - Left Side (Base Level) */}
@@ -407,7 +398,7 @@ export function Home({ onOpenWaitlist }: HomeProps) {
 
                 {/* Nova Club - Right Side (Same Size as Spark) */}
                 <motion.div
-                  className="bg-premium-glass/95 backdrop-blur-xl rounded-3xl p-10 border border-amber-400/60 hover:border-amber-400/80  lg:mb-0 mb-8 md:-translate-y-8 lg:-translate-y-16 transition-all duration-500 hover:scale-105 group h-[500px] flex flex-col"
+                  className="bg-premium-glass/95 backdrop-blur-xl rounded-3xl p-10 border border-amber-400/60 hover:border-amber-400/80 relative z-10 lg:mb-0 mb-8 md:-translate-y-8 lg:-translate-y-16 transition-all duration-500 hover:scale-105 group h-[500px] flex flex-col"
                   variants={cardVariants}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                 //style={{ y: -40 }}
