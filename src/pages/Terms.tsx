@@ -45,13 +45,13 @@ export default function Terms() {
             animate="visible"
           >
             <motion.h1
-              className="font-heading text-5xl font-bold text-pyra-ink mb-6"
+              className="font-heading text-5xl font-bold text-white mb-6"
               variants={itemVariants}
             >
               Terms of <span className="text-gradient">Service</span>
             </motion.h1>
             <motion.p
-              className="text-xl text-pyra-muted max-w-3xl mx-auto"
+              className="text-xl text-white/80 max-w-3xl mx-auto"
               variants={itemVariants}
             >
               The terms and conditions that govern your use of Pyra's services.
@@ -83,14 +83,14 @@ export default function Terms() {
               variants={itemVariants}
             >
               <motion.h2
-                className="font-heading text-3xl font-bold text-pyra-ink mb-6"
+                className="font-heading text-3xl font-bold text-white mb-6"
                 variants={itemVariants}
               >
                 Agreement to Terms
               </motion.h2>
 
               <motion.p
-                className="text-lg text-pyra-muted leading-relaxed mb-6"
+                className="text-lg text-white/80 leading-relaxed mb-6"
                 variants={itemVariants}
               >
                 By accessing or using Pyra's services, you agree to be bound by these Terms of Service.
@@ -98,21 +98,21 @@ export default function Terms() {
               </motion.p>
 
               <motion.h3
-                className="font-heading text-2xl font-semibold text-pyra-ink mb-4 mt-8"
+                className="font-heading text-2xl font-semibold text-white mb-4 mt-8"
                 variants={itemVariants}
               >
                 Description of Services
               </motion.h3>
 
               <motion.p
-                className="text-pyra-muted leading-relaxed mb-4"
+                className="text-white/80 leading-relaxed mb-4"
                 variants={itemVariants}
               >
                 Pyra provides financial technology services including:
               </motion.p>
 
               <motion.ul
-                className="list-disc list-inside text-pyra-muted space-y-2 mb-6"
+                className="list-disc list-inside text-white/80 space-y-2 mb-6"
                 variants={itemVariants}
               >
                 <li>Financial discipline tracking and scoring</li>
@@ -123,21 +123,21 @@ export default function Terms() {
               </motion.ul>
 
               <motion.h3
-                className="font-heading text-2xl font-semibold text-pyra-ink mb-4 mt-8"
+                className="font-heading text-2xl font-semibold text-white mb-4 mt-8"
                 variants={itemVariants}
               >
                 User Accounts
               </motion.h3>
 
               <motion.p
-                className="text-pyra-muted leading-relaxed mb-4"
+                className="text-white/80 leading-relaxed mb-4"
                 variants={itemVariants}
               >
                 To use our services, you must:
               </motion.p>
 
               <motion.ul
-                className="list-disc list-inside text-pyra-muted space-y-2 mb-6"
+                className="list-disc list-inside text-white/80 space-y-2 mb-6"
                 variants={itemVariants}
               >
                 <li>Be at least 18 years old</li>
@@ -148,21 +148,21 @@ export default function Terms() {
               </motion.ul>
 
               <motion.h3
-                className="font-heading text-2xl font-semibold text-pyra-ink mb-4 mt-8"
+                className="font-heading text-2xl font-semibold text-white mb-4 mt-8"
                 variants={itemVariants}
               >
                 Acceptable Use
               </motion.h3>
 
               <motion.p
-                className="text-pyra-muted leading-relaxed mb-4"
+                className="text-white/80 leading-relaxed mb-4"
                 variants={itemVariants}
               >
                 You agree not to:
               </motion.p>
 
               <motion.ul
-                className="list-disc list-inside text-pyra-muted space-y-2 mb-6"
+                className="list-disc list-inside text-white/80 space-y-2 mb-6"
                 variants={itemVariants}
               >
                 <li>Use our services for illegal or unauthorized purposes</li>
@@ -173,14 +173,14 @@ export default function Terms() {
               </motion.ul>
 
               <motion.h3
-                className="font-heading text-2xl font-semibold text-pyra-ink mb-4 mt-8"
+                className="font-heading text-2xl font-semibold text-white mb-4 mt-8"
                 variants={itemVariants}
               >
                 Financial Information
               </motion.h3>
 
               <motion.p
-                className="text-pyra-muted leading-relaxed mb-6"
+                className="text-white/80 leading-relaxed mb-6"
                 variants={itemVariants}
               >
                 By connecting your financial accounts, you authorize us to access and process your
@@ -189,21 +189,21 @@ export default function Terms() {
               </motion.p>
 
               <motion.h3
-                className="font-heading text-2xl font-semibold text-pyra-ink mb-4 mt-8"
+                className="font-heading text-2xl font-semibold text-white mb-4 mt-8"
                 variants={itemVariants}
               >
                 Pyra Clubs
               </motion.h3>
 
               <motion.p
-                className="text-pyra-muted leading-relaxed mb-4"
+                className="text-white/80 leading-relaxed mb-4"
                 variants={itemVariants}
               >
                 Club membership is based on your Financial Discipline Score and is subject to:
               </motion.p>
 
               <motion.ul
-                className="list-disc list-inside text-pyra-muted space-y-2 mb-6"
+                className="list-disc list-inside text-white/80 space-y-2 mb-6"
                 variants={itemVariants}
               >
                 <li>Regular score assessments and updates</li>
@@ -214,14 +214,14 @@ export default function Terms() {
               </motion.ul>
 
               <motion.h3
-                className="font-heading text-2xl font-semibold text-pyra-ink mb-4 mt-8"
+                className="font-heading text-2xl font-semibold text-white mb-4 mt-8"
                 variants={itemVariants}
               >
                 Intellectual Property
               </motion.h3>
 
               <motion.p
-                className="text-pyra-muted leading-relaxed mb-6"
+                className="text-white/80 leading-relaxed mb-6"
                 variants={itemVariants}
               >
                 All content, features, and functionality of our services are owned by Pyra and
@@ -230,14 +230,14 @@ export default function Terms() {
               </motion.p>
 
               <motion.h3
-                className="font-heading text-2xl font-semibold text-pyra-ink mb-4 mt-8"
+                className="font-heading text-2xl font-semibold text-white mb-4 mt-8"
                 variants={itemVariants}
               >
                 Limitation of Liability
               </motion.h3>
 
               <motion.p
-                className="text-pyra-muted leading-relaxed mb-6"
+                className="text-white/80 leading-relaxed mb-6"
                 variants={itemVariants}
               >
                 Pyra provides financial tools and insights but is not responsible for your
@@ -246,14 +246,14 @@ export default function Terms() {
               </motion.p>
 
               <motion.h3
-                className="font-heading text-2xl font-semibold text-pyra-ink mb-4 mt-8"
+                className="font-heading text-2xl font-semibold text-white mb-4 mt-8"
                 variants={itemVariants}
               >
                 Termination
               </motion.h3>
 
               <motion.p
-                className="text-pyra-muted leading-relaxed mb-6"
+                className="text-white/80 leading-relaxed mb-6"
                 variants={itemVariants}
               >
                 You may terminate your account at any time. We may suspend or terminate your
@@ -262,14 +262,14 @@ export default function Terms() {
               </motion.p>
 
               <motion.h3
-                className="font-heading text-2xl font-semibold text-pyra-ink mb-4 mt-8"
+                className="font-heading text-2xl font-semibold text-white mb-4 mt-8"
                 variants={itemVariants}
               >
                 Changes to Terms
               </motion.h3>
 
               <motion.p
-                className="text-pyra-muted leading-relaxed mb-6"
+                className="text-white/80 leading-relaxed mb-6"
                 variants={itemVariants}
               >
                 We may update these terms from time to time. We'll notify you of any material
@@ -278,14 +278,14 @@ export default function Terms() {
               </motion.p>
 
               <motion.h3
-                className="font-heading text-2xl font-semibold text-pyra-ink mb-4 mt-8"
+                className="font-heading text-2xl font-semibold text-white mb-4 mt-8"
                 variants={itemVariants}
               >
                 Governing Law
               </motion.h3>
 
               <motion.p
-                className="text-pyra-muted leading-relaxed mb-6"
+                className="text-white/80 leading-relaxed mb-6"
                 variants={itemVariants}
               >
                 These terms are governed by the laws of Singapore. Any disputes will be resolved
@@ -293,18 +293,18 @@ export default function Terms() {
               </motion.p>
 
               <motion.h3
-                className="font-heading text-2xl font-semibold text-pyra-ink mb-4 mt-8"
+                className="font-heading text-2xl font-semibold text-white mb-4 mt-8"
                 variants={itemVariants}
               >
                 Contact Information
               </motion.h3>
 
               <motion.p
-                className="text-pyra-muted leading-relaxed"
+                className="text-white/80 leading-relaxed"
                 variants={itemVariants}
               >
                 If you have questions about these terms, please contact us at{' '}
-                <a href="mailto:legal@pyra.com" className="text-pyra-cyan hover:underline">
+                <a href="mailto:legal@pyra.com" className="text-cyan-400 hover:underline">
                   legal@pyra.com
                 </a>
                 . We're here to help clarify any concerns you may have.

@@ -357,10 +357,10 @@ export function Home({ onOpenWaitlist }: HomeProps) {
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-end max-w-9xl mx-auto">
                 {/* Spark Club - Left Side (Base Level) */}
                 <motion.div
-                  className="bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-10 border border-white/20 hover:border-cyan-400/40 transition-all duration-500 hover:scale-105 group"
+                  className="bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-10 border border-white/20 hover:border-cyan-400/40 transition-all duration-500 hover:scale-105 group h-[500px] flex flex-col"
                   variants={cardVariants}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  style={{ y: 40 }}
+                  style={{ y: 80 }}
                 >
                   <div className="text-center mb-8">
                     <div className="w-20 h-20 bg-gradient-to-br from-teal-400 to-cyan-400 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-2xl">
@@ -369,10 +369,10 @@ export function Home({ onOpenWaitlist }: HomeProps) {
                     <h3 className="font-heading text-3xl font-bold text-white mb-3">Spark Club</h3>
                     <p className="text-cyan-400 font-medium text-lg">The beginning of privilege.</p>
                   </div>
-                  <p className="text-white/90 text-center mb-8 text-lg leading-relaxed">
+                  <p className="text-white/90 text-justify mb-8 text-lg leading-relaxed flex-grow">
                     Where first steps matter. Spark is for new earners and students building credit for the first time. Every payment made responsibly is a step closer to greater rewards and lasting freedom.
                   </p>
-                  <div className="text-center">
+                  <div className="text-center mt-auto">
                     <div className="inline-flex items-center space-x-2 bg-cyan-400/20 rounded-full px-4 py-2">
                       <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
                       <span className="text-cyan-400 text-sm font-medium">Entry Level</span>
@@ -380,33 +380,24 @@ export function Home({ onOpenWaitlist }: HomeProps) {
                   </div>
                 </motion.div>
 
-                {/* Prime Club - Center (Elevated & Premium) */}
+                {/* Prime Club - Center (Middle Tier) */}
                 <motion.div
-                  className="bg-premium-glass/95 backdrop-blur-xl rounded-3xl p-12 border-2 border-amber-400/60 hover:border-amber-400/80 relative z-10 lg:mb-0 mb-8 md:-translate-y-8 lg:-translate-y-16 transition-all duration-500 hover:scale-105 group"
+                  className="bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-10 border border-white/20 hover:border-orange-400/40 transition-all duration-500 hover:scale-105 group h-[500px] flex flex-col"
                   variants={cardVariants}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  style={{
-                    y: -40,
-                    filter: 'brightness(1.1)',
-                    boxShadow: '0 40px 80px rgba(0,0,0,0.8), 0 0 60px rgba(251, 191, 36, 0.4)'
-                  }}
+                  style={{ y: 20 }}
                 >
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-gradient-to-r from-amber-400 to-yellow-500 text-black px-6 py-2 rounded-full text-sm font-bold">
-                      MOST EXCLUSIVE
-                    </div>
-                  </div>
                   <div className="text-center mb-8">
-                    <div className="w-24 h-24 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-3xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-2xl">
-                      <Star className="text-white" size={48} />
+                    <div className="w-20 h-20 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-2xl">
+                      <Star className="text-white" size={36} />
                     </div>
                     <h3 className="font-heading text-3xl font-bold text-white mb-3">Prime Club</h3>
                     <p className="text-amber-400 font-medium text-lg">Discipline, rewarded</p>
                   </div>
-                  <p className="text-white/90 text-center mb-6 text-lg leading-relaxed">
+                  <p className="text-white/90 text-justify mb-6 text-lg leading-relaxed flex-grow">
                     Consistency creates power. Prime celebrates discipline with tailored financial products, exclusive rewards, and privileges beyond the ordinary.
                   </p>
-                  <div className="text-center">
+                  <div className="text-center mt-auto">
                     <div className="inline-flex items-center space-x-2 bg-amber-400/20 rounded-full px-4 py-2">
                       <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
                       <span className="text-amber-400 text-sm font-medium">Premium Tier</span>
@@ -416,11 +407,16 @@ export function Home({ onOpenWaitlist }: HomeProps) {
 
                 {/* Nova Club - Right Side (Same Size as Spark) */}
                 <motion.div
-                  className="bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-10 border border-white/20 hover:border-orange-400/40 transition-all duration-500 hover:scale-105 group"
+                  className="bg-premium-glass/95 backdrop-blur-xl rounded-3xl p-12 border-2 border-amber-400/60 hover:border-amber-400/80 relative z-10 lg:mb-0 mb-8 md:-translate-y-8 lg:-translate-y-16 transition-all duration-500 hover:scale-105 group"
                   variants={cardVariants}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  style={{ y: 40 }}
+                  style={{ y: -40 }}
                 >
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <div className="bg-gradient-to-r from-amber-400 to-orange-400  text-black px-6 py-2 rounded-full text-sm font-bold">
+                      MOST EXCLUSIVE
+                    </div>
+                  </div>
                   <div className="text-center mb-8">
                     <div className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-2xl">
                       <Crown className="text-white" size={36} />
@@ -428,10 +424,10 @@ export function Home({ onOpenWaitlist }: HomeProps) {
                     <h3 className="font-heading text-3xl font-bold text-white mb-3">Nova Club</h3>
                     <p className="text-orange-400 font-medium text-lg">Excellence, redefined.</p>
                   </div>
-                  <p className="text-white/90 text-center mb-8 text-lg leading-relaxed">
+                  <p className="text-white/90 text-justify mb-8 text-lg leading-relaxed flex-grow">
                     Nova isn't just a tier, it's a destination. Earned, never given, it represents the highest form of financial discipline. Members gain access to rare privileges designed only for the top 1%.
                   </p>
-                  <div className="text-center">
+                  <div className="text-center mt-auto">
                     <div className="inline-flex items-center space-x-2 bg-orange-400/20 rounded-full px-4 py-2">
                       <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
                       <span className="text-orange-400 text-sm font-medium">Elite Status</span>
@@ -533,29 +529,7 @@ export function Home({ onOpenWaitlist }: HomeProps) {
 
           {/* Premium Features Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Feature 1 - Enhanced */}
-            <motion.div
-              className="group relative bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:border-cyan-400/40 transition-all duration-500 hover:scale-105 hover:bg-white/5"
-              variants={itemVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-2xl">
-                  <CreditCard className="text-white" size={28} />
-                </div>
-                <h3 className="font-heading text-2xl font-bold text-white mb-4">
-                  All Your Cards. One View.
-                </h3>
-                <p className="text-white/90 leading-relaxed text-lg">
-                  One dashboard. Total control.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Feature 2 - Enhanced */}
+            {/* PYRA Shield */}
             <motion.div
               className="group relative bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:border-emerald-400/40 transition-all duration-500 hover:scale-105 hover:bg-white/5"
               variants={itemVariants}
@@ -569,15 +543,43 @@ export function Home({ onOpenWaitlist }: HomeProps) {
                   <Shield className="text-white" size={28} />
                 </div>
                 <h3 className="font-heading text-2xl font-bold text-white mb-4">
-                  No Hidden Fees. Ever.
+                  PYRA Shield
                 </h3>
                 <p className="text-white/90 leading-relaxed text-lg">
-                  AI-powered detection keeps your money yours.
+                  Hidden Fee Detection
+                </p>
+                <p className="text-white/70 text-sm leading-relaxed mt-2">
+                  AI scans every e-statement for late fees, extra interest, and duplicate charges, protecting your discipline from unfair costs.
                 </p>
               </div>
             </motion.div>
 
-            {/* Feature 3 - Enhanced */}
+            {/* PYRA One */}
+            <motion.div
+              className="group relative bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:border-cyan-400/40 transition-all duration-500 hover:scale-105 hover:bg-white/5"
+              variants={itemVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-2xl">
+                  <CreditCard className="text-white" size={28} />
+                </div>
+                <h3 className="font-heading text-2xl font-bold text-white mb-4">
+                  PYRA One
+                </h3>
+                <p className="text-white/90 leading-relaxed text-lg">
+                  Unified Dashboard
+                </p>
+                <p className="text-white/70 text-sm leading-relaxed mt-2">
+                  All your credit and debit cards in one elegant view. One club, every card.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* PYRA Edge */}
             <motion.div
               className="group relative bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:border-amber-400/40 transition-all duration-500 hover:scale-105 hover:bg-white/5"
               variants={itemVariants}
@@ -591,15 +593,18 @@ export function Home({ onOpenWaitlist }: HomeProps) {
                   <Gift className="text-white" size={28} />
                 </div>
                 <h3 className="font-heading text-2xl font-bold text-white mb-4">
-                  Stay Ahead. Get Rewarded.
+                  PYRA Edge
                 </h3>
                 <p className="text-white/90 leading-relaxed text-lg">
-                  Smart reminders that turn discipline into perks.
+                  Smart Reminders & Control
+                </p>
+                <p className="text-white/70 text-sm leading-relaxed mt-2">
+                  On-time payment alerts and insights that keep you ahead, always in control.
                 </p>
               </div>
             </motion.div>
 
-            {/* Feature 4 - Enhanced */}
+            {/* PYRA Insights */}
             <motion.div
               className="group relative bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:border-purple-400/40 transition-all duration-500 hover:scale-105 hover:bg-white/5"
               variants={itemVariants}
@@ -613,37 +618,18 @@ export function Home({ onOpenWaitlist }: HomeProps) {
                   <BarChart3 className="text-white" size={28} />
                 </div>
                 <h3 className="font-heading text-2xl font-bold text-white mb-4">
-                  Track Everything. Effortlessly.
+                  PYRA Insights
                 </h3>
                 <p className="text-white/90 leading-relaxed text-lg">
-                  Credit and debit, unified for complete visibility.
+                  Credit Habits & Score Builder
+                </p>
+                <p className="text-white/70 text-sm leading-relaxed mt-2">
+                  Personalised analytics that turn habits into a stronger financial profile.
                 </p>
               </div>
             </motion.div>
 
-            {/* Feature 5 - Enhanced */}
-            <motion.div
-              className="group relative bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:border-teal-400/40 transition-all duration-500 hover:scale-105 hover:bg-white/5"
-              variants={itemVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-teal-400/5 to-cyan-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-2xl">
-                  <TrendingUp className="text-white" size={28} />
-                </div>
-                <h3 className="font-heading text-2xl font-bold text-white mb-4">
-                  Habits That Build Credit.
-                </h3>
-                <p className="text-white/90 leading-relaxed text-lg">
-                  Expense insights that strengthen your financial profile.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Feature 6 - Enhanced */}
+            {/* PYRA Split */}
             <motion.div
               className="group relative bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:border-indigo-400/40 transition-all duration-500 hover:scale-105 hover:bg-white/5"
               variants={itemVariants}
@@ -657,15 +643,18 @@ export function Home({ onOpenWaitlist }: HomeProps) {
                   <Users className="text-white" size={28} />
                 </div>
                 <h3 className="font-heading text-2xl font-bold text-white mb-4">
-                  Shared Expenses. Seamlessly Managed.
+                  PYRA Split
                 </h3>
                 <p className="text-white/90 leading-relaxed text-lg">
-                  Smarter ways to split and settle with friends or family.
+                  Shared Expense Management
+                </p>
+                <p className="text-white/70 text-sm leading-relaxed mt-2">
+                  Seamlessly split and settle expenses with friends and family — the smart way to share.
                 </p>
               </div>
             </motion.div>
 
-            {/* Feature 7 - Enhanced */}
+            {/* PYRA Privé */}
             <motion.div
               className="group relative bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:border-yellow-400/40 transition-all duration-500 hover:scale-105 hover:bg-white/5"
               variants={itemVariants}
@@ -679,10 +668,13 @@ export function Home({ onOpenWaitlist }: HomeProps) {
                   <Crown className="text-white" size={28} />
                 </div>
                 <h3 className="font-heading text-2xl font-bold text-white mb-4">
-                  Your Credit, Your Club.
+                  PYRA Privé
                 </h3>
                 <p className="text-white/90 leading-relaxed text-lg">
-                  Unlock exclusive privileges as you rise from Spark to Nova.
+                  Exclusive Rewards & Privileges
+                </p>
+                <p className="text-white/70 text-sm leading-relaxed mt-2">
+                  Unlock curated rewards and lifestyle benefits as you rise from Spark to Nova.
                 </p>
               </div>
             </motion.div>

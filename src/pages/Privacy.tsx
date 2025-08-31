@@ -45,13 +45,13 @@ export default function Privacy() {
             animate="visible"
           >
             <motion.h1
-              className="font-heading text-5xl font-bold text-pyra-ink mb-6"
+              className="font-heading text-5xl font-bold text-white mb-6"
               variants={itemVariants}
             >
               Privacy <span className="text-gradient">Policy</span>
             </motion.h1>
             <motion.p
-              className="text-xl text-pyra-muted max-w-3xl mx-auto"
+              className="text-xl text-white/80 max-w-3xl mx-auto"
               variants={itemVariants}
             >
               Your privacy is fundamental to how we build trust. Learn how we protect your data
@@ -83,14 +83,14 @@ export default function Privacy() {
               variants={itemVariants}
             >
               <motion.h2
-                className="font-heading text-3xl font-bold text-pyra-ink mb-6"
+                className="font-heading text-3xl font-bold text-white mb-6"
                 variants={itemVariants}
               >
                 Our Commitment to Privacy
               </motion.h2>
 
               <motion.p
-                className="text-lg text-pyra-muted leading-relaxed mb-6"
+                className="text-lg text-white/80 leading-relaxed mb-6"
                 variants={itemVariants}
               >
                 At Pyra, we believe that privacy is not just a feature—it's a fundamental right.
@@ -99,21 +99,21 @@ export default function Privacy() {
               </motion.p>
 
               <motion.h3
-                className="font-heading text-2xl font-semibold text-pyra-ink mb-4 mt-8"
+                className="font-heading text-2xl font-semibold text-white mb-4 mt-8"
                 variants={itemVariants}
               >
                 What We Collect
               </motion.h3>
 
               <motion.p
-                className="text-pyra-muted leading-relaxed mb-4"
+                className="text-white/80 leading-relaxed mb-4"
                 variants={itemVariants}
               >
                 We collect only the information necessary to provide our services:
               </motion.p>
 
               <motion.ul
-                className="list-disc list-inside text-pyra-muted space-y-2 mb-6"
+                className="list-disc list-inside text-white/80 space-y-2 mb-6"
                 variants={itemVariants}
               >
                 <li>Account information (name, email, phone number)</li>
@@ -123,21 +123,21 @@ export default function Privacy() {
               </motion.ul>
 
               <motion.h3
-                className="font-heading text-2xl font-semibold text-pyra-ink mb-4 mt-8"
+                className="font-heading text-2xl font-semibold text-white mb-4 mt-8"
                 variants={itemVariants}
               >
                 How We Use Your Data
               </motion.h3>
 
               <motion.p
-                className="text-pyra-muted leading-relaxed mb-4"
+                className="text-white/80 leading-relaxed mb-4"
                 variants={itemVariants}
               >
                 Your data is used exclusively to:
               </motion.p>
 
               <motion.ul
-                className="list-disc list-inside text-pyra-muted space-y-2 mb-6"
+                className="list-disc list-inside text-white/80 space-y-2 mb-6"
                 variants={itemVariants}
               >
                 <li>Provide personalized financial insights and recommendations</li>
@@ -148,21 +148,21 @@ export default function Privacy() {
               </motion.ul>
 
               <motion.h3
-                className="font-heading text-2xl font-semibold text-pyra-ink mb-4 mt-8"
+                className="font-heading text-2xl font-semibold text-white mb-4 mt-8"
                 variants={itemVariants}
               >
                 Data Security
               </motion.h3>
 
               <motion.p
-                className="text-pyra-muted leading-relaxed mb-6"
+                className="text-white/80 leading-relaxed mb-6"
                 variants={itemVariants}
               >
                 We implement industry-leading security measures to protect your data:
               </motion.p>
 
               <motion.ul
-                className="list-disc list-inside text-pyra-muted space-y-2 mb-6"
+                className="list-disc list-inside text-white/80 space-y-2 mb-6"
                 variants={itemVariants}
               >
                 <li>End-to-end encryption for all data transmission</li>
@@ -173,21 +173,21 @@ export default function Privacy() {
               </motion.ul>
 
               <motion.h3
-                className="font-heading text-2xl font-semibold text-pyra-ink mb-4 mt-8"
+                className="font-heading text-2xl font-semibold text-white mb-4 mt-8"
                 variants={itemVariants}
               >
                 Your Rights
               </motion.h3>
 
               <motion.p
-                className="text-pyra-muted leading-relaxed mb-4"
+                className="text-white/80 leading-relaxed mb-4"
                 variants={itemVariants}
               >
                 You have complete control over your data:
               </motion.p>
 
               <motion.ul
-                className="list-disc list-inside text-pyra-muted space-y-2 mb-6"
+                className="list-disc list-inside text-white/80 space-y-2 mb-6"
                 variants={itemVariants}
               >
                 <li>Access and download your data at any time</li>
@@ -198,14 +198,14 @@ export default function Privacy() {
               </motion.ul>
 
               <motion.h3
-                className="font-heading text-2xl font-semibold text-pyra-ink mb-4 mt-8"
+                className="font-heading text-2xl font-semibold text-white mb-4 mt-8"
                 variants={itemVariants}
               >
                 Third-Party Services
               </motion.h3>
 
               <motion.p
-                className="text-pyra-muted leading-relaxed mb-6"
+                className="text-white/80 leading-relaxed mb-6"
                 variants={itemVariants}
               >
                 We work with trusted third-party services to provide our features. These services
@@ -214,14 +214,14 @@ export default function Privacy() {
               </motion.p>
 
               <motion.h3
-                className="font-heading text-2xl font-semibold text-pyra-ink mb-4 mt-8"
+                className="font-heading text-2xl font-semibold text-white mb-4 mt-8"
                 variants={itemVariants}
               >
                 Updates to This Policy
               </motion.h3>
 
               <motion.p
-                className="text-pyra-muted leading-relaxed mb-6"
+                className="text-white/80 leading-relaxed mb-6"
                 variants={itemVariants}
               >
                 We may update this privacy policy from time to time to reflect changes in our
@@ -230,19 +230,19 @@ export default function Privacy() {
               </motion.p>
 
               <motion.h3
-                className="font-heading text-2xl font-semibold text-pyra-ink mb-4 mt-8"
+                className="font-heading text-2xl font-semibold text-white mb-4 mt-8"
                 variants={itemVariants}
               >
                 Contact Us
               </motion.h3>
 
               <motion.p
-                className="text-pyra-muted leading-relaxed"
+                className="text-white/80 leading-relaxed"
                 variants={itemVariants}
               >
                 If you have any questions about this privacy policy or how we handle your data,
                 please contact us at{' '}
-                <a href="mailto:privacy@pyra.com" className="text-pyra-cyan hover:underline">
+                <a href="mailto:privacy@pyra.com" className="text-cyan-400 hover:underline">
                   privacy@pyra.com
                 </a>
                 . We're committed to transparency and will respond to all inquiries promptly.
