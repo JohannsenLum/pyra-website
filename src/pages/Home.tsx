@@ -360,9 +360,9 @@ export function Home({ onOpenWaitlist }: HomeProps) {
                   className="bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-10 border border-white/20 hover:border-cyan-400/40 transition-all duration-500 hover:scale-105 group h-[500px] flex flex-col"
                   variants={cardVariants}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  style={{ y: 80 }}
+                //</div>style={{ y: 80 }}
                 >
-                  <div className="text-center mb-8">
+                  <div className="text-center mb-8 flex-shrink-0">
                     <div className="w-20 h-20 bg-gradient-to-br from-teal-400 to-cyan-400 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-2xl">
                       <Zap className="text-white" size={36} />
                     </div>
@@ -372,7 +372,7 @@ export function Home({ onOpenWaitlist }: HomeProps) {
                   <p className="text-white/90 text-justify mb-8 text-lg leading-relaxed flex-grow">
                     Where first steps matter. Spark is for new earners and students building credit for the first time. Every payment made responsibly is a step closer to greater rewards and lasting freedom.
                   </p>
-                  <div className="text-center mt-auto">
+                  <div className="text-center mt-auto flex-shrink-0">
                     <div className="inline-flex items-center space-x-2 bg-cyan-400/20 rounded-full px-4 py-2">
                       <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
                       <span className="text-cyan-400 text-sm font-medium">Entry Level</span>
@@ -385,19 +385,19 @@ export function Home({ onOpenWaitlist }: HomeProps) {
                   className="bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-10 border border-white/20 hover:border-orange-400/40 transition-all duration-500 hover:scale-105 group h-[500px] flex flex-col"
                   variants={cardVariants}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  style={{ y: 20 }}
+                //style={{ y: 20 }}
                 >
-                  <div className="text-center mb-8">
+                  <div className="text-center mb-8 flex-shrink-0">
                     <div className="w-20 h-20 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-2xl">
                       <Star className="text-white" size={36} />
                     </div>
                     <h3 className="font-heading text-3xl font-bold text-white mb-3">Prime Club</h3>
                     <p className="text-amber-400 font-medium text-lg">Discipline, rewarded</p>
                   </div>
-                  <p className="text-white/90 text-justify mb-6 text-lg leading-relaxed flex-grow">
-                    Consistency creates power. Prime celebrates discipline with tailored financial products, exclusive rewards, and privileges beyond the ordinary.
+                  <p className="text-white/90 text-justify mb-8 text-lg leading-relaxed flex-grow">
+                    Your consistency creates power. Prime celebrates discipline with tailored financial products, exclusive rewards, unified insights, and privileges beyond the ordinary.
                   </p>
-                  <div className="text-center mt-auto">
+                  <div className="text-center mt-auto flex-shrink-0">
                     <div className="inline-flex items-center space-x-2 bg-amber-400/20 rounded-full px-4 py-2">
                       <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
                       <span className="text-amber-400 text-sm font-medium">Premium Tier</span>
@@ -407,17 +407,17 @@ export function Home({ onOpenWaitlist }: HomeProps) {
 
                 {/* Nova Club - Right Side (Same Size as Spark) */}
                 <motion.div
-                  className="bg-premium-glass/95 backdrop-blur-xl rounded-3xl p-12 border-2 border-amber-400/60 hover:border-amber-400/80 relative z-10 lg:mb-0 mb-8 md:-translate-y-8 lg:-translate-y-16 transition-all duration-500 hover:scale-105 group"
+                  className="bg-premium-glass/95 backdrop-blur-xl rounded-3xl p-10 border border-amber-400/60 hover:border-amber-400/80  lg:mb-0 mb-8 md:-translate-y-8 lg:-translate-y-16 transition-all duration-500 hover:scale-105 group h-[500px] flex flex-col"
                   variants={cardVariants}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  style={{ y: -40 }}
+                //style={{ y: -40 }}
                 >
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <div className="bg-gradient-to-r from-amber-400 to-orange-400  text-black px-6 py-2 rounded-full text-sm font-bold">
                       MOST EXCLUSIVE
                     </div>
                   </div>
-                  <div className="text-center mb-8">
+                  <div className="text-center mb-8 flex-shrink-0">
                     <div className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-2xl">
                       <Crown className="text-white" size={36} />
                     </div>
@@ -425,9 +425,9 @@ export function Home({ onOpenWaitlist }: HomeProps) {
                     <p className="text-orange-400 font-medium text-lg">Excellence, redefined.</p>
                   </div>
                   <p className="text-white/90 text-justify mb-8 text-lg leading-relaxed flex-grow">
-                    Nova isn't just a tier, it's a destination. Earned, never given, it represents the highest form of financial discipline. Members gain access to rare privileges designed only for the top 1%.
+                    Nova isn't just a tier, it's a destination. Earned, never given, it represents the highest form of financial discipline. Members gain access to privileges only for the top 1%.
                   </p>
-                  <div className="text-center mt-auto">
+                  <div className="text-center mt-auto flex-shrink-0">
                     <div className="inline-flex items-center space-x-2 bg-orange-400/20 rounded-full px-4 py-2">
                       <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
                       <span className="text-orange-400 text-sm font-medium">Elite Status</span>
