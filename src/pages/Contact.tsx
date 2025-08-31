@@ -123,7 +123,7 @@ export default function Contact({ onOpenWaitlist }: ContactProps) {
               className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed"
               variants={itemVariants}
             >
-              Have questions about Pyra? Want to partner with us?
+              Have questions about PYRA? Want to partner with us?
               Ready to join the waitlist? We'd love to hear from you.
             </motion.p>
           </motion.div>
@@ -393,7 +393,7 @@ export default function Contact({ onOpenWaitlist }: ContactProps) {
               variants={itemVariants}
             >
               Join thousands of users across Southeast Asia who are already building
-              better financial discipline with Pyra.
+              better financial discipline with PYRA.
             </motion.p>
 
             <motion.div

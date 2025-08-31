@@ -144,7 +144,7 @@ export default function NotFound() {
               className="text-lg text-pyra-muted mb-8 max-w-2xl mx-auto"
               variants={itemVariants}
             >
-              While you're here, explore our main sections to discover how Pyra can help you
+              While you're here, explore our main sections to discover how PYRA can help you
               build better financial habits and unlock exclusive benefits.
             </motion.p>
 
@@ -154,7 +154,7 @@ export default function NotFound() {
             >
               {[
                 {
-                  title: 'About Pyra',
+                  title: 'About PYRA',
                   description: 'Learn about our mission to redefine credit and financial habits',
                   link: '/about',
                   icon: '🎯'
@@ -166,7 +166,7 @@ export default function NotFound() {
                   icon: '⚡'
                 },
                 {
-                  title: 'Pyra Clubs',
+                  title: 'PYRA Clubs',
                   description: 'Explore our tiered membership system and exclusive benefits',
                   link: '/clubs',
                   icon: '👑'

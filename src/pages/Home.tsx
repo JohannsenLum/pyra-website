@@ -298,7 +298,7 @@ export function Home({ onOpenWaitlist }: HomeProps) {
 
 
 
-      {/* Pyra Clubs Section */}
+      {/* PYRA Clubs Section */}
       <motion.section
         id="clubs"
         className="min-h-screen flex items-center justify-center relative overflow-hidden"
@@ -529,30 +529,6 @@ export function Home({ onOpenWaitlist }: HomeProps) {
 
           {/* Premium Features Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* PYRA Shield */}
-            <motion.div
-              className="group relative bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:border-emerald-400/40 transition-all duration-500 hover:scale-105 hover:bg-white/5"
-              variants={itemVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-green-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-green-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-2xl">
-                  <Shield className="text-white" size={28} />
-                </div>
-                <h3 className="font-heading text-2xl font-bold text-white mb-4">
-                  PYRA Shield
-                </h3>
-                <p className="text-white/90 leading-relaxed text-lg">
-                  Hidden Fee Detection
-                </p>
-                <p className="text-white/70 text-sm leading-relaxed mt-2">
-                  AI scans every e-statement for late fees, extra interest, and duplicate charges, protecting your discipline from unfair costs.
-                </p>
-              </div>
-            </motion.div>
 
             {/* PYRA One */}
             <motion.div
@@ -575,6 +551,31 @@ export function Home({ onOpenWaitlist }: HomeProps) {
                 </p>
                 <p className="text-white/70 text-sm leading-relaxed mt-2">
                   All your credit and debit cards in one elegant view. One club, every card.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* PYRA Shield */}
+            <motion.div
+              className="group relative bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:border-emerald-400/40 transition-all duration-500 hover:scale-105 hover:bg-white/5"
+              variants={itemVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-green-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-green-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-2xl">
+                  <Shield className="text-white" size={28} />
+                </div>
+                <h3 className="font-heading text-2xl font-bold text-white mb-4">
+                  PYRA Shield
+                </h3>
+                <p className="text-white/90 leading-relaxed text-lg">
+                  Hidden Fee Detection
+                </p>
+                <p className="text-white/70 text-sm leading-relaxed mt-2">
+                  AI scans every e-statement for late fees, extra interest, and duplicate charges, protecting your discipline from unfair costs.
                 </p>
               </div>
             </motion.div>
@@ -946,7 +947,7 @@ export function Home({ onOpenWaitlist }: HomeProps) {
         </div>
       </motion.section>
 
-      {/* Pyra Super-App Vision Section */}
+      {/* PYRA Super-App Vision Section */}
 
 
       {/* Coming Soon Modal */}

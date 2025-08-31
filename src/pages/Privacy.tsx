@@ -93,7 +93,7 @@ export default function Privacy() {
                 className="text-lg text-white/80 leading-relaxed mb-6"
                 variants={itemVariants}
               >
-                At Pyra, we believe that privacy is not just a feature—it's a fundamental right.
+                At PYRA, we believe that privacy is not just a feature—it's a fundamental right.
                 We're committed to building financial tools that protect your data while providing
                 the insights you need to build better financial habits.
               </motion.p>
@@ -142,7 +142,7 @@ export default function Privacy() {
               >
                 <li>Provide personalized financial insights and recommendations</li>
                 <li>Calculate your Financial Discipline Score</li>
-                <li>Determine your eligibility for different Pyra Clubs</li>
+                <li>Determine your eligibility for different PYRA Clubs</li>
                 <li>Improve our services and user experience</li>
                 <li>Ensure security and prevent fraud</li>
               </motion.ul>

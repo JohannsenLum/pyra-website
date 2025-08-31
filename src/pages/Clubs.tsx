@@ -112,7 +112,7 @@ export default function Clubs() {
               className="text-xl text-pyra-muted max-w-3xl mx-auto"
               variants={itemVariants}
             >
-              Rise through the Pyra Clubs based on your financial discipline.
+              Rise through the PYRA Clubs based on your financial discipline.
               No arbitrary spending requirements—just good habits, rewarded.
             </motion.p>
           </motion.div>

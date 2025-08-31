@@ -49,8 +49,8 @@ export default function Footer() {
             variants={itemVariants}
           >
             <Link to="/" className="flex items-center space-x-2 mb-4">
-              <img src="/pyra.png" alt="Pyra Logo" className="w-12 h-12" />
-              <span className="text-white font-bold text-xl">Pyra</span>
+              <img src="/pyra.png" alt="PYRA Logo" className="w-12 h-12" />
+              <span className="text-white font-bold text-xl">PYRA</span>
             </Link>
           </motion.div>
 
@@ -106,7 +106,7 @@ export default function Footer() {
             className="text-white/60 text-sm"
             variants={itemVariants}
           >
-            © {currentYear} Pyra. All rights reserved.
+            © {currentYear} PYRA. All rights reserved.
           </motion.p>
         </motion.div>
       </div>

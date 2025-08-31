@@ -143,7 +143,7 @@ export default function Careers() {
               className="font-heading text-4xl font-bold text-pyra-ink mb-4"
               variants={itemVariants}
             >
-              Why Join Pyra?
+              Why Join PYRA?
             </motion.h2>
           </motion.div>
 
@@ -313,7 +313,7 @@ export default function Careers() {
               className="text-pyra-muted mb-6 leading-relaxed"
               variants={itemVariants}
             >
-              Pyra is committed to creating a diverse and inclusive workplace. We welcome
+              PYRA is committed to creating a diverse and inclusive workplace. We welcome
               applications from all qualified candidates regardless of race, gender, age,
               religion, sexual orientation, or any other protected characteristic.
             </motion.p>

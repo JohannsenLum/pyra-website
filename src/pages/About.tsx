@@ -8,19 +8,19 @@ export default function About() {
     {
       name: 'sanjeev',
       role: 'Founder & CEO',
-      bio: 'Product & strategy leader with fintech partnerships expertise. Passionate about redefining credit and financial habits in Southeast Asia.',
+
       linkedin: 'https://www.linkedin.com/in/sanjeev2710'
     },
     {
       name: 'flo',
       role: 'CFO & COO',
-      bio: 'Capital strategy and unit economics specialist with compliance rigor. Drives sustainable growth across Southeast Asia.',
+
       linkedin: 'http://www.linkedin.com/in/florian-gache'
     },
     {
       name: 'basil',
       role: 'CTO',
-      bio: 'Operations and partner delivery expert with deep member support experience. Builds reliable financial rails.',
+
       linkedin: 'https://www.linkedin.com/in/basil-boh-81933b18b/'
     },
   ];
@@ -82,7 +82,7 @@ export default function About() {
               className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8"
               variants={itemVariants}
             >
-              About <span className="text-gradient">Pyra</span>
+              About <span className="text-gradient">PYRA</span>
             </motion.h1>
             <motion.p
               className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed"
@@ -133,27 +133,21 @@ export default function About() {
                 className="text-lg text-white/90 leading-relaxed mb-6"
                 variants={itemVariants}
               >
-                Pyra was founded to build an ecosystem where financial discipline is rewarded, trust is monetized,
-                and users ascend aspirational tiers of finance and lifestyle. We saw disciplined
-                individuals penalized by fragmented tools and generic rewards, while irresponsible spending
-                was celebrated with points and perks.
+                PYRA was founded to create an ecosystem where financial discipline is rewarded, trust is valued, and members ascend through aspirational tiers of finance and lifestyle. We saw a world where disciplined individuals were overlooked, penalized by fragmented tools and generic rewards, while reckless spending was celebrated with empty points and perks.
               </motion.p>
 
               <motion.p
                 className="text-lg text-white/90 leading-relaxed mb-6"
                 variants={itemVariants}
               >
-                So we built a behavior-first ecosystem where your habits unlock access. Where building
-                credit responsibly, managing expenses wisely, and making smart financial choices creates real status
-                and meaningful benefits.
+                So we built a behavior first ecosystem where habits unlock access. Where building credit responsibly, managing expenses wisely, and making consistent choices elevate you to real status and meaningful privileges.
               </motion.p>
 
               <motion.p
                 className="text-lg text-white/90 leading-relaxed"
                 variants={itemVariants}
               >
-                Starting in Southeast Asia, we're creating the financial super-app that rewards what
-                matters: discipline, consistency, and long-term thinking.
+                Starting in Southeast Asia, PYRA is shaping the financial super app for the disciplined, rewarding consistency, trust, and long term thinking with a club designed for those who rise.
               </motion.p>
             </motion.div>
           </div>
@@ -199,20 +193,6 @@ export default function About() {
             viewport={{ once: true }}
           >
             <motion.div
-              className="bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:border-cyan-400/40 transition-all duration-500 hover:scale-105"
-              variants={itemVariants}
-            >
-              <h3 className="font-heading text-2xl font-semibold text-white mb-6">
-                Our Vision
-              </h3>
-              <p className="text-white/90 leading-relaxed">
-                A financial super-app for Southeast Asia that rewards good habits with real access.
-                Where discipline becomes the new currency and financial responsibility opens doors
-                to premium experiences and opportunities.
-              </p>
-            </motion.div>
-
-            <motion.div
               className="bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:border-emerald-400/40 transition-all duration-500 hover:scale-105"
               variants={itemVariants}
             >
@@ -220,9 +200,19 @@ export default function About() {
                 Our Mission
               </h3>
               <p className="text-white/90 leading-relaxed">
-                To build an ecosystem where financial discipline is rewarded, trust is monetized,
-                and users ascend aspirational tiers of finance and lifestyle. We transform credit
-                behavior into a valuable asset.
+                To build an ecosystem where discipline is rewarded, trust is valued, and members rise through aspirational tiers of finance and lifestyle. We transform responsible credit behavior into a powerful asset that unlocks privilege and belonging.
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:border-cyan-400/40 transition-all duration-500 hover:scale-105"
+              variants={itemVariants}
+            >
+              <h3 className="font-heading text-2xl font-semibold text-white mb-6">
+                Our Vision
+              </h3>
+              <p className="text-white/90 leading-relaxed">
+                To create the financial super app for Southeast Asia that rewards discipline with real access. Where good habits become the new currency and financial responsibility opens doors to premium experiences and opportunities.
               </p>
             </motion.div>
           </motion.div>
@@ -247,10 +237,10 @@ export default function About() {
               variants={containerVariants}
             >
               {[
-                'Member-first clarity',
-                'Privacy by default',
-                'Trust you earn',
-                'Do the boring things beautifully'
+                'Exclusivity with Purpose',
+                'Privacy as Privilege',
+                'Trust, Earned Daily',
+                'Elegance in the Everyday'
               ].map((value, i) => (
                 <motion.div
                   key={i}
@@ -266,89 +256,7 @@ export default function About() {
       </motion.section>
 
       {/* Founders */}
-      <motion.section
-        className="py-32 relative overflow-hidden"
-        style={{ backgroundColor: '#0A0A0A' }}
-        variants={itemVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        {/* Premium Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/20 via-transparent to-teal-900/20" />
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-gradient-to-br from-emerald-400/10 to-green-400/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-gradient-to-br from-teal-400/10 to-cyan-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }} />
 
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            className="text-center mb-16"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <motion.h2
-              className="font-heading text-4xl md:text-5xl font-bold text-white mb-4"
-              variants={itemVariants}
-            >
-              Meet the Founders
-            </motion.h2>
-            <motion.p
-              className="text-xl text-white/80"
-              variants={itemVariants}
-            >
-              Building the future of financial discipline across Southeast Asia
-            </motion.p>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {founders.map((founder, index) => (
-              <motion.div
-                key={founder.name}
-                className="bg-premium-glass/90 backdrop-blur-xl rounded-3xl p-6 text-center border border-white/20 hover:border-cyan-400/40 transition-all duration-500 hover:scale-105 group flex flex-col h-full"
-                variants={founderCardVariants}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-              >
-                <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden group-hover:scale-110 transition-transform duration-300 shadow-2xl">
-                  <img
-                    src={`/${founder.name.toLowerCase()}.jpg`}
-                    alt={`${founder.name} - ${founder.role}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                <h3 className="font-heading text-xl font-semibold text-white mb-1">
-                  {founder.name.charAt(0).toUpperCase() + founder.name.slice(1)}
-                </h3>
-                <p className="text-cyan-400 font-medium mb-4">{founder.role}</p>
-
-                <p className="text-sm text-white/90 leading-relaxed mb-4 flex-grow">
-                  {founder.bio}
-                </p>
-
-                <a
-                  href={founder.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-cyan-400 hover:text-white transition-colors mt-auto"
-                >
-                  <Linkedin size={16} className="mr-1" />
-                  LinkedIn
-                </a>
-              </motion.div>
-            ))}
-          </motion.div>
-
-
-        </div>
-      </motion.section>
     </div>
   );
 }

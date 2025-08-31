@@ -53,8 +53,8 @@ export default function Header({ onOpenWaitlist }: HeaderProps) {
             className="flex-shrink-0"
           >
             <Link to="/" className="flex items-center space-x-2">
-              <img src="/pyra.png" alt="Pyra Logo" className="w-10 h-10" />
-              <span className="text-white font-bold text-xl">Pyra</span>
+              <img src="/pyra.png" alt="PYRA Logo" className="w-10 h-10" />
+              <span className="text-white font-bold text-xl">PYRA</span>
             </Link>
           </motion.div>
 

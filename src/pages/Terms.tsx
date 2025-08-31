@@ -54,7 +54,7 @@ export default function Terms() {
               className="text-xl text-white/80 max-w-3xl mx-auto"
               variants={itemVariants}
             >
-              The terms and conditions that govern your use of Pyra's services.
+              The terms and conditions that govern your use of PYRA's services.
               Please read carefully to understand your rights and responsibilities.
             </motion.p>
           </motion.div>
@@ -93,7 +93,7 @@ export default function Terms() {
                 className="text-lg text-white/80 leading-relaxed mb-6"
                 variants={itemVariants}
               >
-                By accessing or using Pyra's services, you agree to be bound by these Terms of Service.
+                By accessing or using PYRA's services, you agree to be bound by these Terms of Service.
                 If you disagree with any part of these terms, you may not access our services.
               </motion.p>
 
@@ -108,7 +108,7 @@ export default function Terms() {
                 className="text-white/80 leading-relaxed mb-4"
                 variants={itemVariants}
               >
-                Pyra provides financial technology services including:
+                PYRA provides financial technology services including:
               </motion.p>
 
               <motion.ul
@@ -117,7 +117,7 @@ export default function Terms() {
               >
                 <li>Financial discipline tracking and scoring</li>
                 <li>Credit card and expense management tools</li>
-                <li>Tiered membership programs (Pyra Clubs)</li>
+                <li>Tiered membership programs (PYRA Clubs)</li>
                 <li>Financial insights and recommendations</li>
                 <li>Educational content and resources</li>
               </motion.ul>
@@ -192,7 +192,7 @@ export default function Terms() {
                 className="font-heading text-2xl font-semibold text-white mb-4 mt-8"
                 variants={itemVariants}
               >
-                Pyra Clubs
+                PYRA Clubs
               </motion.h3>
 
               <motion.p
@@ -224,7 +224,7 @@ export default function Terms() {
                 className="text-white/80 leading-relaxed mb-6"
                 variants={itemVariants}
               >
-                All content, features, and functionality of our services are owned by Pyra and
+                All content, features, and functionality of our services are owned by PYRA and
                 are protected by copyright, trademark, and other intellectual property laws.
                 You may not copy, modify, or distribute our content without permission.
               </motion.p>
@@ -240,7 +240,7 @@ export default function Terms() {
                 className="text-white/80 leading-relaxed mb-6"
                 variants={itemVariants}
               >
-                Pyra provides financial tools and insights but is not responsible for your
+                PYRA provides financial tools and insights but is not responsible for your
                 financial decisions or outcomes. We do not guarantee investment returns or
                 financial success. Our liability is limited to the amount you paid for our services.
               </motion.p>

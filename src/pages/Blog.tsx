@@ -6,7 +6,7 @@ import { BlogHeroBackground } from '@/components/BlogHeroBackground';
 export default function Blog() {
   const featuredPost = {
     title: 'The Psychology of Financial Discipline: Why Traditional Rewards Fail',
-    excerpt: 'Explore how Pyra\'s behavior-first approach creates lasting financial habits by understanding the psychology behind discipline and delayed gratification.',
+    excerpt: 'Explore how PYRA\'s behavior-first approach creates lasting financial habits by understanding the psychology behind discipline and delayed gratification.',
     category: 'Behavioral Finance',
     readTime: '8 min read',
     date: 'December 15, 2024',
@@ -24,7 +24,7 @@ export default function Blog() {
     },
     {
       title: 'The Hidden Costs of Credit Card Rewards Programs',
-      excerpt: 'How traditional points systems actually encourage overspending and what Pyra does differently.',
+      excerpt: 'How traditional points systems actually encourage overspending and what PYRA does differently.',
       category: 'Credit Cards',
       readTime: '5 min read',
       date: 'December 10, 2024',
@@ -32,14 +32,14 @@ export default function Blog() {
     },
     {
       title: 'Privacy-First Finance: Why It Matters in 2024',
-      excerpt: 'The importance of protecting your financial data and how Pyra ensures your privacy while building trust.',
+      excerpt: 'The importance of protecting your financial data and how PYRA ensures your privacy while building trust.',
       category: 'Privacy & Security',
       readTime: '7 min read',
       date: 'December 8, 2024',
       icon: Shield
     },
     {
-      title: 'Community-Driven Financial Growth: The Pyra Way',
+      title: 'Community-Driven Financial Growth: The PYRA Way',
       excerpt: 'How building a community of disciplined users creates better outcomes for everyone involved.',
       category: 'Community',
       readTime: '4 min read',
@@ -47,16 +47,16 @@ export default function Blog() {
       icon: Users
     },
     {
-      title: 'From Spark to Nova: Your Journey Through the Pyra Clubs',
-      excerpt: 'A detailed guide to ascending through Pyra\'s tiered system and unlocking exclusive benefits.',
-      category: 'Pyra Clubs',
+      title: 'From Spark to Nova: Your Journey Through the PYRA Clubs',
+      excerpt: 'A detailed guide to ascending through PYRA\'s tiered system and unlocking exclusive benefits.',
+      category: 'PYRA Clubs',
       readTime: '9 min read',
       date: 'December 4, 2024',
       icon: Zap
     },
     {
       title: 'The Future of Financial Status: Beyond Traditional Credit Scores',
-      excerpt: 'How Pyra is redefining what it means to have good financial standing in the digital age.',
+      excerpt: 'How PYRA is redefining what it means to have good financial standing in the digital age.',
       category: 'Innovation',
       readTime: '6 min read',
       date: 'December 2, 2024',
@@ -356,7 +356,7 @@ export default function Blog() {
               className="text-pyra-muted mb-6"
               variants={itemVariants}
             >
-              Get the latest insights on financial behavior, credit innovation, and Pyra updates
+              Get the latest insights on financial behavior, credit innovation, and PYRA updates
               delivered to your inbox.
             </motion.p>
 
